@@ -1,5 +1,5 @@
-#pragma once
-#include"Enemy.h"
+ï»¿#pragma once
+#include"EnemyBase.h"
 #include"stdafx.h"
 class Enemy;
 
@@ -13,12 +13,12 @@ public:
 	void Create(int moveType, D3DXVECTOR2 startPos);
 	void RandCreae();
 	void Deleat();
-	Enemy* GetEnemy(int num);
-	//	“G”
+	EnemyBase* GetEnemy(int num);
+	//	æ•µæ•°
 	static const int enemyMax = 5;
 private:
 
-	//	“G”z—ñ
-	Enemy *enemys[enemyMax];
+	//	æ•µé…åˆ—
+	EnemyBase *enemys[enemyMax];
 };
 

@@ -1,14 +1,13 @@
-#pragma once
-#include"Bullet.h"
+ï»¿#pragma once
 #include"stdafx.h"
-class Bullet;
+#include "UnitBase.h"
+class BulletBase ;
 /**
-* @brief ’e‚ÌŠÇ—
-* @details ’e‚ÌXVA•`‰æA¶¬‚ğs‚¤
+* @brief å¼¾ã®ç®¡ç†
+* @details å¼¾ã®æ›´æ–°ã€æç”»ã€ç”Ÿæˆã‚’è¡Œã†
 */
-class BulletManager
+namespace Bullet
 {
-public:
 	enum TargetType
 	{
 		None,
@@ -16,18 +15,22 @@ public:
 		Enemy,
 	};
 
-	const static int bulletNum = 5;
-	BulletManager();
-	~BulletManager();
-	//	ì¬
-	void Create(float speed, TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
-	void Render();
-	void Update();
-	void Remove(Bullet *bullet);
-	Bullet* Getbullet(int num);
-private:
-	//	’e‚Ì‚Í”z—ñ
-	Bullet *bullets[bulletNum];
+	class BulletManager
+	{
+	public:
+		const static int bulletNum = 5;
+		BulletManager();
+		~BulletManager();
+		//	ä½œæˆ
+		void Create(float speed, TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
+		void Render();
+		void Update();
+		void Remove(BulletBase *bullet);
+		BulletBase* Getbullet(int num);
+	private:
+		//	å¼¾ã®ã¯é…åˆ—
+		BulletBase *bulletList[bulletNum];
 
-	//list<Bullet> bulletList;
-};
+		//list<Bullet> bulletList;
+	};
+}

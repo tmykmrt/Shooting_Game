@@ -1,5 +1,5 @@
-#include "EnemyManager.h"
-#include "Enemy.h"
+ï»¿#include "EnemyManager.h"
+#include "EnemyBase.h"
 
 EnemyManager::EnemyManager()
 {
@@ -15,13 +15,13 @@ EnemyManager::~EnemyManager()
 	delete[] enemys;
 }
 
-Enemy* EnemyManager::GetEnemy(int num)
+EnemyBase* EnemyManager::GetEnemy(int num)
 {
 	if (num < 0 || num >= enemyMax)return NULL;
 	return enemys[num];
 }
 
-//	XV
+//	æ›´æ–°
 void EnemyManager::Update()
 {
 	RandCreae();
@@ -40,7 +40,7 @@ void EnemyManager::Update()
 	}
 }
 
-//	•`‰æ
+//	æç”»
 void EnemyManager::Render()
 {
 	for (int i = 0; i < enemyMax; i++)
@@ -57,7 +57,7 @@ void EnemyManager::Create(int moveType, D3DXVECTOR2 startPos)
 	{
 		if (enemys[i] == NULL)
 		{
-			enemys[i] = new Enemy(moveType, startPos);
+			enemys[i] = new EnemyBase(moveType, startPos);
 			break;
 		}
 	}

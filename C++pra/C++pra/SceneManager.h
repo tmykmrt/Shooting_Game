@@ -7,8 +7,6 @@
 * @brief ƒV[ƒ“ŠÇ—
 * @date 2018 7/25
 */
-
-
 class SceneManager
 {
 public:
@@ -17,7 +15,6 @@ public:
 		Title,
 		Game,
 	};
-
 
 	SceneManager();
 	~SceneManager();

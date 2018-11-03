@@ -5,13 +5,13 @@
 * @date 2018 9/23
 */
 #include "UnitBase.h"
-class Enemy : public UnitBase
+#include "MovementBase.h"
+class EnemyBase : public UnitBase
 {
 public:
-	Enemy();
-	Enemy(int moveType, D3DXVECTOR2 startPos);
-	~Enemy();
-
+	EnemyBase();
+	EnemyBase(int moveType, D3DXVECTOR2 startPos);
+	~EnemyBase();
 	//	‰Šú‰»
 	void Init(int moveType, D3DXVECTOR2 startPos);
 	void Update();
@@ -22,6 +22,7 @@ private:
 	int moveType;
 	//! ‘Å‚Âí—Ş
 	int shotType;
-
+	//! ˆÚ“®
+	MovementBase* mover;
 };
 

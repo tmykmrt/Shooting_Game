@@ -1,7 +1,7 @@
-
+ï»¿
 /**
 * @file UnitBase.h
-* @brief ƒ†ƒjƒbƒgŠî’êƒNƒ‰ƒX
+* @brief ãƒ¦ãƒ‹ãƒƒãƒˆåŸºåº•ã‚¯ãƒ©ã‚¹
 * @date 2018 8/25
 */
 
@@ -13,39 +13,39 @@ class UnitBase
 public:
 	UnitBase();
 	virtual ~UnitBase();
-	//	XV
+	//	æ›´æ–°
 	virtual void Update() = 0;
-	//	•`‰æ
+	//	æç”»
 	virtual void Render() = 0;
 	//	
 	virtual void HitAction(int atk);
 
 	D3DXVECTOR2 GetPosition();
-	//	”äŠr
+	//	æ¯”è¼ƒ
 	const bool UnitBase::operator == (const UnitBase& b)
 	{
 		return this == &b;
 	}
-	//	¶‘¶‚µ‚Ä‚¢‚é‚©
+	//	ç”Ÿå­˜ã—ã¦ã„ã‚‹ã‹
 	bool Exists();
-	//! ‰æ–ÊŠOŠm”F
+	//! ç”»é¢å¤–ç¢ºèª
 	bool CheckScreenOut();
-	//! À•WXV
+	//! åº§æ¨™æ›´æ–°
 	void UpdatePosition();
 protected:
-	//!À•W
+	//!åº§æ¨™
 	D3DXVECTOR2 position;
-	//	ƒxƒNƒgƒ‹
+	//	ç§»å‹•ãƒ™ã‚¯ãƒˆãƒ«
 	D3DXVECTOR2 vec;
-	//!‰æ‘œ
+	//!ç”»åƒ
 	Sprite sprite;
-	//!‘¬“x
+	//!é€Ÿåº¦
 	float speed;
-	//! Œ»İ‚Ì‘¬“x
+	//! ç¾åœ¨ã®é€Ÿåº¦
 	float nowSpeed;
-	//! ‘Ì—Í
+	//! ä½“åŠ›
 	int hp;
-	//! ‘¶İ‚µ‚Ä‚¢‚é‚©
+	//! å­˜åœ¨ã—ã¦ã„ã‚‹ã‹
 	bool exists;
 };
 

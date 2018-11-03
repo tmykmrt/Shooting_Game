@@ -1,9 +1,9 @@
-#include"stdafx.h"
-#include "Player.h"
+﻿#include"stdafx.h"
+#include "PlayerBase.h"
 #include "Input.h"
 #include"Collision.h"
 
-Player::Player(TCHAR *name, int x, int y)
+PlayerBase::PlayerBase(TCHAR *name, int x, int y)
 {
 	sprite.Load(name, x, y);
 	speed = 3;
@@ -12,17 +12,17 @@ Player::Player(TCHAR *name, int x, int y)
 	hp = 10;
 }
 
-Player::~Player()
+PlayerBase::~PlayerBase()
 {
 	UnitBase::~UnitBase();
 }
 
-void Player::SetBulletManager(BulletManager *bullet) 
+void PlayerBase::SetBulletManager(Bullet::BulletManager *bullet)
 {
 	bulletManager = bullet;
 }
 
-void Player::Update()
+void PlayerBase::Update()
 {
 	input.UpdateMouse();
 	UpdateVecter();
@@ -32,12 +32,12 @@ void Player::Update()
 	UpdatePosition();
 }
 
-void Player::Render()
+void PlayerBase::Render()
 {
 	UnitBase::Render();
 }
 
-void Player::UpdateVecter()
+void PlayerBase::UpdateVecter()
 {
 	if (input.OnLeft() == false)return;
 	targetPosition = input.GetMousePoint();
@@ -46,16 +46,16 @@ void Player::UpdateVecter()
 	vec.y = sinf(angle);
 }
 
-void Player::Shot()
+void PlayerBase::Shot()
 {
 	reloadValue--;
 	if (input.OnRight() == false) return;
 	if(reloadValue > 0)return;
-	bulletManager->Create(10,BulletManager::TargetType::Enemy,1,position,position);
+	bulletManager->Create(10,Bullet::TargetType::Enemy,1,position,position);
 	reloadValue = 60;
 }
 
-void Player::HitAction(int atk)
+void PlayerBase::HitAction(int atk)
 {
 	UnitBase::HitAction(atk);
 }

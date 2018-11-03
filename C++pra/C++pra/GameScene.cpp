@@ -1,11 +1,12 @@
 #include "GameScene.h"
 #include "Collision.h"
-#include "Player.h"
+#include "PlayerBase.h"
+#include "BulletBase.h"
 GameScene::GameScene()
 {
-	bulletManager = new BulletManager();
+	bulletManager = new Bullet::BulletManager();
 	enemytManager = new EnemyManager();
-	player = new Player("chara.png", 128, 128);
+	player = new PlayerBase("chara.png", 128, 128);
 	player->SetBulletManager(bulletManager);
 	bgSprite.pos = { 0,0 };
 	bgSprite.Load("game.png", 1280, 720);
@@ -38,17 +39,17 @@ void GameScene::Render()
 
 void GameScene::Colision()
 {
-	for(int i = 0; i < BulletManager::bulletNum; i++)
+	for(int i = 0; i <Bullet::BulletManager::bulletNum; i++)
 	{
-		Bullet *b = bulletManager->Getbullet(i);
+		BulletBase *b = bulletManager->Getbullet(i);
 		if (b == NULL)continue;
 		if (b->Exists() == false)continue;
 		//	エネミーとの判定
-		if (b->GetTargetType() == BulletManager::TargetType::Enemy)
+		if (b->GetTargetType() == Bullet::TargetType::Enemy)
 		{
 			for (int i = 0; i < EnemyManager::enemyMax; i++)
 			{
-				Enemy *e = enemytManager->GetEnemy(i);
+				EnemyBase *e = enemytManager->GetEnemy(i);
 				if (e == NULL)continue;
 				if (e->Exists() == false)continue;
 				if (Collision::Circle(b->GetPosition(), e->GetPosition(), 32))

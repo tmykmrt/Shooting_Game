@@ -1,24 +1,25 @@
-#include "Enemy.h"
-
-Enemy::Enemy()
+#include "EnemyBase.h"
+#include "MoveLeft.h"
+EnemyBase::EnemyBase()
 {
 	
 }
 
-Enemy::Enemy(int moveType, D3DXVECTOR2 startPos)
+EnemyBase::EnemyBase(int moveType, D3DXVECTOR2 startPos)
 {
 	speed = 4;
 	sprite.Load("bullet_01.png", 32, 32);
 	Init(moveType, startPos);
 }
 
-Enemy::~Enemy()
+EnemyBase::~EnemyBase()
 {
+	delete mover;
 	UnitBase::~UnitBase();
 }
 
 //
-void Enemy::Init(int moveType, D3DXVECTOR2 startPos)
+void EnemyBase::Init(int moveType, D3DXVECTOR2 startPos)
 {
 	this->moveType = moveType;
 	position = startPos;
@@ -26,13 +27,14 @@ void Enemy::Init(int moveType, D3DXVECTOR2 startPos)
 	hp = 1;
 	if (moveType == 1)
 	{
-		vec = D3DXVECTOR2(-1, 0);
+		mover = new MoveLeft();
 		nowSpeed = speed;
 	}
 }
 
-void Enemy::Update()
+void EnemyBase::Update()
 {
+	mover->Move(vec);
 	UpdatePosition();
 	if (CheckScreenOut())
 	{
@@ -40,12 +42,12 @@ void Enemy::Update()
 	}
 }	//
 
-void Enemy::Render()
+void EnemyBase::Render()
 {
 	UnitBase::Render();
 }
 
-void Enemy::HitAction(int atk)
+void EnemyBase::HitAction(int atk)
 {
 	UnitBase::HitAction(atk);
 }

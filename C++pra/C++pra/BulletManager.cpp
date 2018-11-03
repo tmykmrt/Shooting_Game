@@ -1,23 +1,25 @@
-#include "BulletManager.h"
-BulletManager::BulletManager()
+Ôªø#include "BulletManager.h"
+#include "UnitBase.h"
+#include "BulletBase.h"
+Bullet::BulletManager::BulletManager()
 {
 	//bulletList = new list<Bullet>;
 	for (int i = 0; i < bulletNum; i++)
 	{
-		bullets[i] = NULL;
+		bulletList[i] = NULL;
 	}
 }
 
 
-BulletManager::~BulletManager()
+Bullet::BulletManager::~BulletManager()
 {
 	//bulletList.clear();
 	//delete bulletList;
-	delete[] bullets;
+	delete[] bulletList;
 }
 
-//	çXêV
-void BulletManager::Update()
+//	Êõ¥Êñ∞
+void Bullet::BulletManager::Update()
 {
 	//list<Bullet>::iterator itr;
 	//for (itr = bulletList.begin(); itr != bulletList.end(); itr++)
@@ -35,29 +37,29 @@ void BulletManager::Update()
 	
 	for (int i = 0; i < bulletNum;i++)
 	{
-		if (bullets[i] == NULL)continue;
-		if (bullets[i]->Exists() == false)
+		if (bulletList[i] == NULL)continue;
+		if (bulletList[i]->Exists() == false)
 		{
-			delete bullets[i];
-			bullets[i] = NULL;
+			delete bulletList[i];
+			bulletList[i] = NULL;
 		}
 		else
 		{
-			bullets[i]->Update();
+			bulletList[i]->Update();
 		}
 	}
 }
 
 
-Bullet* BulletManager::Getbullet(int num)
+BulletBase* Bullet::BulletManager::Getbullet(int num)
 {
 	if (num < 0 || num >= bulletNum)return NULL;
-	return bullets[num];
+	return bulletList[num];
 }
 
 
-//	ï`âÊ
-void BulletManager::Render()
+//	ÊèèÁîª
+void Bullet::BulletManager::Render()
 {
 	//list<Bullet>::iterator itr;
 	//for (itr = bulletList.begin(); itr != bulletList.end(); itr++)
@@ -66,29 +68,29 @@ void BulletManager::Render()
 	//}
 	for (int i = 0; i < bulletNum; i++)
 	{
-		if (bullets[i] == NULL)continue;
-		bullets[i]->Render();
+		if (bulletList[i] == NULL)continue;
+		bulletList[i]->Render();
 	}
 }
 
-//	í«â¡
-void BulletManager::Create(float speed, TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos)
+//	ËøΩÂä†
+void Bullet::BulletManager::Create(float speed, Bullet::TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos)
 {
 	//Bullet *bullet = new Bullet(speed, targetType, moveType, startPos, targtPos);
 	//bullet->SetBulletManager(this);
 	//bulletList.push_back(*bullet);
 	for (int i = 0; i < bulletNum; i++)
 	{
-		if (bullets[i] == NULL)
+		if (bulletList[i] == NULL)
 		{
-			bullets[i] = new Bullet(speed, targetType, moveType, startPos, targtPos);
+			bulletList[i] = new BulletBase(speed, targetType, moveType, startPos, targtPos);
 			break;
 		}
 	}
 }
 
-//	çÌèú
-void BulletManager::Remove(Bullet *bullet)
+//	ÂâäÈô§
+void Bullet::BulletManager::Remove(BulletBase *bullet)
 {
 	//bulletList->remove(*bullet);
 	////delete[] bullet;

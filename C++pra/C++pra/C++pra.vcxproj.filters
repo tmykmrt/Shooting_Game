@@ -25,17 +25,8 @@
     <Filter Include="ソース ファイル\Unit">
       <UniqueIdentifier>{f1e4459a-b064-416e-84e0-2703a26f4844}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Player">
-      <UniqueIdentifier>{df904ece-0730-4205-92ef-fd4637b5fbcd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Collision">
       <UniqueIdentifier>{0a6a7c03-22f8-46a9-948f-d499c6371b4c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Bullet">
-      <UniqueIdentifier>{5a3c84c2-2292-4863-bfb8-8484e14a86a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Enemy">
-      <UniqueIdentifier>{dfb59fd3-65a3-4970-a5c2-8bf129343a0f}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\2DAnimation">
       <UniqueIdentifier>{862a18f7-e38c-4ed8-a7a3-4271e9a24fc7}</UniqueIdentifier>
@@ -45,6 +36,18 @@
     </Filter>
     <Filter Include="ソース ファイル\SpriteData">
       <UniqueIdentifier>{ad65824d-d74b-4e22-bbd7-dab201d7d2f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Unit\Enemy">
+      <UniqueIdentifier>{dfb59fd3-65a3-4970-a5c2-8bf129343a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Unit\Player">
+      <UniqueIdentifier>{df904ece-0730-4205-92ef-fd4637b5fbcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Unit\Bullet">
+      <UniqueIdentifier>{5a3c84c2-2292-4863-bfb8-8484e14a86a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Unit\Movement">
+      <UniqueIdentifier>{a1066057-4f6d-4b44-b1b2-ac79eff7c2ae}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -81,29 +84,38 @@
     <ClCompile Include="UnitBase.cpp">
       <Filter>ソース ファイル\Unit</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>ソース ファイル\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Collision.cpp">
       <Filter>ソース ファイル\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>ソース ファイル\Bullet</Filter>
-    </ClCompile>
     <ClCompile Include="BulletManager.cpp">
-      <Filter>ソース ファイル\Bullet</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>ソース ファイル\Enemy</Filter>
+      <Filter>ソース ファイル\Unit\Bullet</Filter>
     </ClCompile>
     <ClCompile Include="EnemyManager.cpp">
-      <Filter>ソース ファイル\Enemy</Filter>
+      <Filter>ソース ファイル\Unit\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="SpriteManager.cpp">
       <Filter>ソース ファイル\SpriteManager</Filter>
     </ClCompile>
     <ClCompile Include="SpriteData.cpp">
       <Filter>ソース ファイル\SpriteData</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementBase.cpp">
+      <Filter>ソース ファイル\Unit\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveRight.cpp">
+      <Filter>ソース ファイル\Unit\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveLeft.cpp">
+      <Filter>ソース ファイル\Unit\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletBase.cpp">
+      <Filter>ソース ファイル\Unit\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBase.cpp">
+      <Filter>ソース ファイル\Unit\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyBase.cpp">
+      <Filter>ソース ファイル\Unit\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,23 +152,14 @@
     <ClInclude Include="UnitBase.h">
       <Filter>ソース ファイル\Unit</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>ソース ファイル\Player</Filter>
-    </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>ソース ファイル\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>ソース ファイル\Bullet</Filter>
-    </ClInclude>
     <ClInclude Include="BulletManager.h">
-      <Filter>ソース ファイル\Bullet</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>ソース ファイル\Enemy</Filter>
+      <Filter>ソース ファイル\Unit\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="EnemyManager.h">
-      <Filter>ソース ファイル\Enemy</Filter>
+      <Filter>ソース ファイル\Unit\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="GameParameter.h">
       <Filter>ソース ファイル</Filter>
@@ -166,6 +169,24 @@
     </ClInclude>
     <ClInclude Include="SpriteData.h">
       <Filter>ソース ファイル\SpriteData</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementBase.h">
+      <Filter>ソース ファイル\Unit\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveRight.h">
+      <Filter>ソース ファイル\Unit\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveLeft.h">
+      <Filter>ソース ファイル\Unit\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletBase.h">
+      <Filter>ソース ファイル\Unit\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBase.h">
+      <Filter>ソース ファイル\Unit\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyBase.h">
+      <Filter>ソース ファイル\Unit\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

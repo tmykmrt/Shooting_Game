@@ -6,7 +6,7 @@ SpriteData::SpriteData()
 
 }
 
-SpriteData::SpriteData(int id)
+SpriteData::SpriteData(int id, string fileName)
 {
 	this->id = id;
 
@@ -14,6 +14,5 @@ SpriteData::SpriteData(int id)
 
 SpriteData::~SpriteData()
 {
-
 
 }

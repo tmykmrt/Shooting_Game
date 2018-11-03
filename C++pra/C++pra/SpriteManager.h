@@ -6,8 +6,6 @@ class SpriteManager
 public:
 	SpriteManager();
 	~SpriteManager();
-private:
-		
 
 };
 
