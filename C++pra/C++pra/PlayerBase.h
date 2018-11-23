@@ -21,7 +21,6 @@ public:
 private:
 	//	
 	D3DXVECTOR2 targetPosition;
-	Input input;
 	Bullet::BulletManager *bulletManager;
 	//	
 	int reloadValue;

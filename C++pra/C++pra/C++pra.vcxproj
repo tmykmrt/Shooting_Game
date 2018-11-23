@@ -140,7 +140,6 @@
     <ClCompile Include="PlayerBase.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="Singleton.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteData.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>

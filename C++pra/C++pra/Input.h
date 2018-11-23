@@ -1,9 +1,10 @@
 #pragma once
-class Input
+#include"stdafx.h"
+
+class Input : public Singleton<Input>
 {
 public:
-	Input();
-	~Input();
+	friend class Singleton<Input>;
 	HRESULT Init(HWND hwnd);
 	HRESULT InitMouse(HWND hwnd);
 	HRESULT InitKey(HWND hwnd);
@@ -11,14 +12,15 @@ public:
 	bool ConfirmKeyEntry();
 	//	更新
 	void Update();
-
 	void UpdateKeys();
-
 	void UpdateMouse();
 	D3DXVECTOR2 GetMousePoint() { return mousePoint; }
 	bool OnRight() { return onMouseRight; }
 	bool OnLeft() { return onMouseLeft; }
 	void Release();
+protected:
+	Input();
+	~Input();
 private:
 	//	キーボードー
 	static LPDIRECTINPUT8 pDinput;
@@ -37,5 +39,4 @@ private:
 	bool onMouseRight;
 	bool onMouseLeft;
 };
-extern Input* input;
 

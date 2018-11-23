@@ -24,7 +24,6 @@ void PlayerBase::SetBulletManager(Bullet::BulletManager *bullet)
 
 void PlayerBase::Update()
 {
-	input.UpdateMouse();
 	UpdateVecter();
 	Shot();
 	if (Collision::Circle(position.x, position.y, targetPosition.x, targetPosition.y, 2))nowSpeed = 0;
@@ -39,8 +38,8 @@ void PlayerBase::Render()
 
 void PlayerBase::UpdateVecter()
 {
-	if (input.OnLeft() == false)return;
-	targetPosition = input.GetMousePoint();
+	if (Input::GetInstance()->OnLeft() == false)return;
+	targetPosition = Input::GetInstance()->GetMousePoint();
 	float angle = atan2f(targetPosition.y - position.y, targetPosition.x - position.x);
 	vec.x = cosf(angle);
 	vec.y = sinf(angle);
@@ -49,7 +48,7 @@ void PlayerBase::UpdateVecter()
 void PlayerBase::Shot()
 {
 	reloadValue--;
-	if (input.OnRight() == false) return;
+	if (Input::GetInstance()->OnRight() == false) return;
 	if(reloadValue > 0)return;
 	bulletManager->Create(10,Bullet::TargetType::Enemy,1,position,position);
 	reloadValue = 60;

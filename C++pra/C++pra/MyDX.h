@@ -3,11 +3,10 @@
 #define SAFE_RELEASE(p) { if(p) { (p)->Release(); (p)=NULL; } }
 
 //	DirectX管理
-static class MyDX
+static class MyDX : public Singleton<MyDX>
 {
 public:
-	MyDX();
-	~MyDX();
+	friend class Singleton<MyDX>;
 	//	初期化
 	HRESULT Init(HWND);
 	//	描画
@@ -16,6 +15,9 @@ public:
 	void Release();
 	static LPDIRECT3D9 Pd3d() { return pD3d; }
 	static LPDIRECT3DDEVICE9 Device() { return pDevice; }
+protected:
+	MyDX();
+	~MyDX();
 private:
 	//	Direct3DとDirect3Dデバイス
 	static LPDIRECT3D9 pD3d;

@@ -6,7 +6,6 @@
 #include"SceneManager.h"
 #include"Input.h"
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-Input* input = new Input();;
 //HRESULT InitD3d(HWND);
 //VOID Render();
 //
@@ -16,9 +15,9 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 {
 	HWND hWnd = NULL;
 	MSG msg;
-	MyDX my_dx;
-	m2DObj m2d;
-
+	MyDX::Create();
+	m2DObj::Create();
+	Input::Create();
 	// ウィンドウの初期化
 	static char szAppName[] = "004 Direct3D初期化まで Direct3D最小コード ";
 	WNDCLASSEX  wndclass;
@@ -44,20 +43,20 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 
 
 	// ダイレクト３Dの初期化関数を呼ぶ
-	if (FAILED(my_dx.Init(hWnd)))
+	if (FAILED(MyDX::GetInstance()->Init(hWnd)))
 	{
 		return 0;
 	}
 	//	2D描画初期化
-	if (FAILED(m2d.Init()))
+	if (FAILED(m2DObj::GetInstance()->Init()))
 	{
 		return 0;
 	}
-	if (input->Init(hWnd))
+	if (Input::GetInstance()->Init(hWnd))
 	{
 		return 0;
 	}
-	if (input->InitMouse(hWnd))
+	if (Input::GetInstance()->InitMouse(hWnd))
 	{
 		return 0;
 	}
@@ -88,7 +87,8 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 			{
 				//
 				//	  この中で何らかのレンダリング関連のコードを書く
-				//		
+				//	
+				Input::GetInstance()->UpdateMouse();
 				sceneManager->Update();
 				sceneManager->Render();
 
@@ -98,11 +98,10 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 		}
 	}
 	//アプリケーションを終了する時には、Direct3Dオブジェクトをリリースする
-	my_dx.Release();
-	m2d.Release();
+	MyDX::GetInstance()->Release();
+	m2DObj::GetInstance()->Release();
 	delete sceneManager;
-	input->Release();
-	delete input;
+	Input::GetInstance()->Release();
 	return (INT)msg.wParam;
 
 }

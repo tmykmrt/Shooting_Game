@@ -73,4 +73,5 @@ void m2DObj::DrawCenter(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT rect
 void m2DObj::Release()
 {
 	pSprite->Release();
+	Singleton::Destroy();
 }

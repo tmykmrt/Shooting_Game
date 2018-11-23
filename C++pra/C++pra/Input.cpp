@@ -143,4 +143,5 @@ void Input::Release()
 	pDinput->Release();
 	pKeyDevice->Release();
 	pMouseDevice->Release();
+	Singleton::Destroy();
 }

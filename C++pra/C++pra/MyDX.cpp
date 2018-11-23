@@ -15,12 +15,12 @@ MyDX::~MyDX()
 	//m_p_device->Release();
 }
 
-
 //	‰ð•ú
 void MyDX::Release()
 {
 	pD3d->Release();
 	pDevice->Release();
+	Singleton::Destroy();
 }
 
 

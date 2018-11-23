@@ -49,6 +49,9 @@
     <Filter Include="ソース ファイル\Unit\Movement">
       <UniqueIdentifier>{a1066057-4f6d-4b44-b1b2-ac79eff7c2ae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Singleton">
+      <UniqueIdentifier>{86f3c84b-35cb-4648-91c8-175913572486}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,9 +68,6 @@
     </ClCompile>
     <ClCompile Include="GameScene.cpp">
       <Filter>ソース ファイル\Scene\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Singleton.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>ソース ファイル</Filter>
@@ -146,9 +146,6 @@
     <ClInclude Include="GameScene.h">
       <Filter>ソース ファイル\Scene\Game</Filter>
     </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="UnitBase.h">
       <Filter>ソース ファイル\Unit</Filter>
     </ClInclude>
@@ -187,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="EnemyBase.h">
       <Filter>ソース ファイル\Unit\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>ソース ファイル\Singleton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
