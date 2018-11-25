@@ -12,7 +12,7 @@ public:
 	//	•`‰æ
 	void Draw(LPDIRECT3DTEXTURE9 *pTexture, int x,int y,int , RECT rect);
 	static void Draw(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT rect);
-	static void DrawCenter(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT rect);
+	static void DrawCenter(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT drowRect, D3DXVECTOR2 size);
 	void Release();
 protected:
 	m2DObj();

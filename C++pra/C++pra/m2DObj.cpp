@@ -50,12 +50,12 @@ void m2DObj::Draw(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT rect)
 	pSprite->End();
 }
 //	•`‰æ
-void m2DObj::DrawCenter(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT rect)
+void m2DObj::DrawCenter(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT drowRect, D3DXVECTOR2 size)
 {
-	D3DXVECTOR3 v3Center(rect.right / 2, rect.bottom / 2, 0);
+	D3DXVECTOR3 v3Center(size.x / 2, size.y / 2, 0);
 	D3DXVECTOR3 v3Position(pos);
 	pSprite->Begin(D3DXSPRITE_ALPHABLEND);
-	pSprite->Draw(*pTexture, &rect, &v3Center, &v3Position, D3DCOLOR_ARGB(255, 255, 255, 255));
+	pSprite->Draw(*pTexture, &drowRect, &v3Center, &v3Position, D3DCOLOR_ARGB(255, 255, 255, 255));
 	pSprite->End();
 }
 

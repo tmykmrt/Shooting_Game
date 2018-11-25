@@ -16,6 +16,7 @@ protected:
 	~SpriteManager();
 private:
 	//!	‰æ‘œƒf[ƒ^
-	list<SpriteData> spriteDataList;
+	vector<TCHAR*> loadSpriteName;
+	map<int,SpriteData*> spriteDatas;
 };
 

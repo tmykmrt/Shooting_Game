@@ -13,11 +13,16 @@ SpriteManager::~SpriteManager()
 
 bool SpriteManager::Load(TCHAR *fileName)
 {
-	//D3DXIMAGE_INFO *info;
-	//if (D3DXGetImageInfoFromFile(fileName, info) == D3D_OK)
-	//{
-	//	SpriteData *data = new SpriteData(0,fileName, info->Width,info->Height);
-	//
-	//}
+	//iterator it = spriteDatas.begin();
+
+	D3DXIMAGE_INFO *info = NULL;
+	//	î•ñŽæ“¾
+	if (D3DXGetImageInfoFromFile(fileName, info) == D3D_OK)
+	{
+		SpriteData *data = new SpriteData(0,fileName, info->Width,info->Height);
+		//spriteDatas.insert(std::make_pair(loadSpriteName.cou, data));
+	}
+
+	
 	return NULL;
 }

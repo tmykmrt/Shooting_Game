@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation2D.cpp" />
     <ClCompile Include="BulletBase.cpp" />
     <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="Collision.cpp" />
@@ -137,7 +138,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="MyDX.cpp" />
-    <ClCompile Include="PlayerBase.cpp" />
+    <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -147,10 +148,12 @@
     <ClCompile Include="SpriteManager.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="UnitBase.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation2D.h" />
     <ClInclude Include="BulletBase.h" />
     <ClInclude Include="BulletManager.h" />
     <ClInclude Include="Collision.h" />
@@ -170,7 +173,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="MyDX.h" />
-    <ClInclude Include="PlayerBase.h" />
+    <ClInclude Include="PlayerController.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Singleton.h" />
@@ -182,6 +185,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="UnitBase.h" />
   </ItemGroup>

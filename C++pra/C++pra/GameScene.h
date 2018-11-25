@@ -3,7 +3,7 @@
 #include "Sprite.h"
 #include "BulletManager.h"
 #include "EnemyManager.h"
-#include "PlayerBase.h"
+#include "PlayerController.h"
 class GameScene :public SceneBase
 {
 public:
@@ -19,7 +19,7 @@ private:
 	//	
 	Sprite bgSprite;
 
-	PlayerBase *player;
+	PlayerController *player;
 
 	Bullet::BulletManager *bulletManager;
 

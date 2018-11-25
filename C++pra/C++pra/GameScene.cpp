@@ -1,12 +1,12 @@
 #include "GameScene.h"
 #include "Collision.h"
-#include "PlayerBase.h"
+#include "PlayerController.h"
 #include "BulletBase.h"
 GameScene::GameScene()
 {
 	bulletManager = new Bullet::BulletManager();
 	enemytManager = new EnemyManager();
-	player = new PlayerBase("chara.png", 128, 128);
+	player = new PlayerController("player.png", 1280, 256);
 	player->SetBulletManager(bulletManager);
 	bgSprite.pos = { 0,0 };
 	bgSprite.Load("game.png", 1280, 720);

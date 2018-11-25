@@ -7,7 +7,7 @@
 * @brief シーン管理
 * @date 2018 7/25
 */
-class SceneManager
+class SceneManager : public Singleton<SceneManager>
 {
 public:
 	enum Scene
@@ -15,9 +15,7 @@ public:
 		Title,
 		Game,
 	};
-
-	SceneManager();
-	~SceneManager();
+	friend class Singleton<SceneManager>;
 	//	シーンの切り替え
 	void Change(Scene newScene);
 	//	更新
@@ -25,6 +23,9 @@ public:
 	//	描画
 	void Render();
 
+protected:
+	SceneManager();
+	~SceneManager();
 private:
 	//	今更新中のシーン
 	SceneBase *m_nowScene;

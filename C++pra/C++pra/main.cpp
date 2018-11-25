@@ -5,21 +5,22 @@
 #include"Sprite.h"
 #include"SceneManager.h"
 #include"Input.h"
+#include"SpriteManager.h"
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-//HRESULT InitD3d(HWND);
-//VOID Render();
-//
+
 //INT WINAPI WinMain( HINSTANCE hInst,HINSTANCE hPrevInst,LPSTR szStr,INT iCmdShow)
 //アプリケーションのエントリー関数
 INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdShow)
 {
 	HWND hWnd = NULL;
 	MSG msg;
+	//	生成
 	MyDX::Create();
 	m2DObj::Create();
 	Input::Create();
+	SpriteManager::Create();
 	// ウィンドウの初期化
-	static char szAppName[] = "004 Direct3D初期化まで Direct3D最小コード ";
+	static char szAppName[] = "シューティング　仮";
 	WNDCLASSEX  wndclass;
 
 	wndclass.cbSize = sizeof(wndclass);
@@ -43,30 +44,17 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 
 
 	// ダイレクト３Dの初期化関数を呼ぶ
-	if (FAILED(MyDX::GetInstance()->Init(hWnd)))
-	{
-		return 0;
-	}
+	if (FAILED(MyDX::GetInstance()->Init(hWnd))) return 0;
+
 	//	2D描画初期化
-	if (FAILED(m2DObj::GetInstance()->Init()))
-	{
-		return 0;
-	}
-	if (Input::GetInstance()->Init(hWnd))
-	{
-		return 0;
-	}
-	if (Input::GetInstance()->InitMouse(hWnd))
-	{
-		return 0;
-	}
+	if (FAILED(m2DObj::GetInstance()->Init())) return 0;
 
-
-
-	//sp.Load("k.png", 256, 256);
-	//sp.pos = { 0,0 };
-	SceneManager *sceneManager = new SceneManager();
-	sceneManager->Change(SceneManager::Scene::Game);
+	//	入力初期化
+	if (Input::GetInstance()->Init(hWnd)) return 0;
+	if (Input::GetInstance()->InitMouse(hWnd)) return 0;
+	
+	SceneManager::Create();
+	SceneManager::GetInstance()->Change(SceneManager::Scene::Game);
 
 	// メッセージループ
 	ZeroMemory(&msg, sizeof(msg));
@@ -79,28 +67,24 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 		}
 		else
 		{
-
-
-			//my_dx.Render();
 			MyDX::Device()->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0, 0, 255), 1.0f, 0);
 			if (SUCCEEDED(MyDX::Device()->BeginScene()))
 			{
-				//
-				//	  この中で何らかのレンダリング関連のコードを書く
-				//	
+				//	更新
 				Input::GetInstance()->UpdateMouse();
-				sceneManager->Update();
-				sceneManager->Render();
+				SceneManager::GetInstance()->Update();
+				SceneManager::GetInstance()->Render();
 
 				MyDX::Device()->EndScene();
 			}
 			MyDX::Device()->Present(NULL, NULL, NULL, NULL);
 		}
 	}
-	//アプリケーションを終了する時には、Direct3Dオブジェクトをリリースする
+	//	破棄
 	MyDX::GetInstance()->Release();
 	m2DObj::GetInstance()->Release();
-	delete sceneManager;
+	SceneManager::Destroy();
+	SpriteManager::Destroy();
 	Input::GetInstance()->Release();
 	return (INT)msg.wParam;
 

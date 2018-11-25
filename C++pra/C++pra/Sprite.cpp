@@ -20,6 +20,14 @@ void Sprite::Load(TCHAR *name, int x, int y)
 	m2DObj::LoadTexture(name, &pTexture, x, y);
 }
 
+//	ì«Ç›çûÇ›
+void Sprite::Load(TCHAR *name, int imageSizeX, int imageSizeY, int sizeX, int sizeY)
+{
+	size.x = sizeX;
+	size.y = sizeY;
+	m2DObj::LoadTexture(name, &pTexture, imageSizeX, imageSizeY);
+}
+
 void Sprite::Draw()
 {
 	RECT rec = { 0, 0, size.x, size.y };
@@ -29,8 +37,16 @@ void Sprite::Draw()
 void Sprite::DrawCenter()
 {
 	RECT rec = { 0, 0, size.x, size.y };
-	m2DObj::DrawCenter(&pTexture, pos, rec);
+	m2DObj::DrawCenter(&pTexture, pos, rec,size);
 }
+
+void Sprite::DrawCenter(int top,int right)
+{
+	//	ï`âÊîÕàÕ
+	RECT rec = { size.x * (right -1),size.y  *(top - 1), size.x * right, size.y * top };
+	m2DObj::DrawCenter(&pTexture, pos, rec,size);
+}
+
 //	âï˙
 void Sprite::Release()
 {

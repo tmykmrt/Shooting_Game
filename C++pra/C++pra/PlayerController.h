@@ -3,11 +3,14 @@
 #include "stdafx.h"
 #include "Input.h"
 #include "BulletManager.h"
-class PlayerBase : public UnitBase
+#include "Animation2D.h"
+class Animation2D;
+
+class PlayerController : public UnitBase
 {
 public:
-	PlayerBase(TCHAR *name, int x, int y);
-	~PlayerBase();
+	PlayerController(TCHAR *name, int x, int y);
+	~PlayerController();
 	//	更新
 	void Update();
 	//	描画
@@ -24,5 +27,8 @@ private:
 	Bullet::BulletManager *bulletManager;
 	//	
 	int reloadValue;
+	int animnum;
+	Animation2D *anim;
+	Animation2DData tmpD[2];
 };
 

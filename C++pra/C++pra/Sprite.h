@@ -11,10 +11,12 @@ public:
 	//	ƒTƒCƒY
 	D3DXVECTOR2 size;
 	void Load(TCHAR *name,int x,int y);
+	void Load(TCHAR *name, int imageSizeX, int imageSizeY,int sizeX,int sizeY);
 	//	•`‰æ
 	void Draw();
 	//	•`‰æ
 	void DrawCenter();
+	void DrawCenter(int top, int right);
 	//	‰ð•ú
 	void Release();
 private:
