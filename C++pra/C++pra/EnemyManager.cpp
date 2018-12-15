@@ -9,7 +9,6 @@ EnemyManager::EnemyManager()
 	}
 }
 
-
 EnemyManager::~EnemyManager()
 {
 	delete[] enemys;

@@ -15,10 +15,10 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 	HWND hWnd = NULL;
 	MSG msg;
 	//	生成
-	MyDX::Create();
-	m2DObj::Create();
-	Input::Create();
-	SpriteManager::Create();
+	MyDX::CreateInstance();
+	m2DObj::CreateInstance();
+	Input::CreateInstance();
+	SpriteManager::CreateInstance();
 	// ウィンドウの初期化
 	static char szAppName[] = "シューティング　仮";
 	WNDCLASSEX  wndclass;
@@ -53,7 +53,7 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 	if (Input::GetInstance()->Init(hWnd)) return 0;
 	if (Input::GetInstance()->InitMouse(hWnd)) return 0;
 	
-	SceneManager::Create();
+	SceneManager::CreateInstance();
 	SceneManager::GetInstance()->Change(SceneManager::Scene::Game);
 
 	// メッセージループ

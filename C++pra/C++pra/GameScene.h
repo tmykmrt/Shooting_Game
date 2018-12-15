@@ -4,6 +4,7 @@
 #include "BulletManager.h"
 #include "EnemyManager.h"
 #include "PlayerController.h"
+
 class GameScene :public SceneBase
 {
 public:
@@ -20,9 +21,4 @@ private:
 	Sprite bgSprite;
 
 	PlayerController *player;
-
-	Bullet::BulletManager *bulletManager;
-
-	EnemyManager *enemytManager;
 };
-

@@ -2,12 +2,13 @@
 #include "Collision.h"
 #include "PlayerController.h"
 #include "BulletBase.h"
+
+
 GameScene::GameScene()
 {
-	bulletManager = new Bullet::BulletManager();
-	enemytManager = new EnemyManager();
+	EnemyManager::CreateInstance();
+	Bullet::BulletManager::CreateInstance();
 	player = new PlayerController("player.png", 1280, 256);
-	player->SetBulletManager(bulletManager);
 	bgSprite.pos = { 0,0 };
 	bgSprite.Load("game.png", 1280, 720);
 }
@@ -16,16 +17,16 @@ GameScene::GameScene()
 GameScene::~GameScene()
 {
 	delete player;
-	delete bulletManager;
-	delete enemytManager;
+	EnemyManager::Destroy();
+	Bullet::BulletManager::Destroy();
 	bgSprite.Release();
 }
 
 void GameScene::Update()
 {
 	player->Update();
-	bulletManager->Update();
-	enemytManager->Update();
+	EnemyManager::GetInstance()->Update();
+	Bullet::BulletManager::GetInstance()->Update();
 	Colision();
 }
 
@@ -33,15 +34,15 @@ void GameScene::Render()
 {
 	bgSprite.Draw();
 	player->Render();
-	bulletManager->Render();
-	enemytManager->Render();
+	EnemyManager::GetInstance()->Render();
+	Bullet::BulletManager::GetInstance()->Render();
 }
 
 void GameScene::Colision()
 {
-	for(int i = 0; i <Bullet::BulletManager::bulletNum; i++)
+	for (int i = 0; i < Bullet::BulletManager::bulletNum; i++)
 	{
-		BulletBase *b = bulletManager->Getbullet(i);
+		BulletBase *b = Bullet::BulletManager::GetInstance()->Getbullet(i);
 		if (b == NULL)continue;
 		if (b->Exists() == false)continue;
 		//	エネミーとの判定
@@ -49,7 +50,7 @@ void GameScene::Colision()
 		{
 			for (int i = 0; i < EnemyManager::enemyMax; i++)
 			{
-				EnemyBase *e = enemytManager->GetEnemy(i);
+				EnemyBase *e = EnemyManager::GetInstance()->GetEnemy(i);
 				if (e == NULL)continue;
 				if (e->Exists() == false)continue;
 				if (Collision::Circle(b->GetPosition(), e->GetPosition(), 32))
@@ -59,8 +60,5 @@ void GameScene::Colision()
 				}
 			}
 		}
-
-
 	}
-
 }

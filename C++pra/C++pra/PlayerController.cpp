@@ -36,10 +36,6 @@ PlayerController::~PlayerController()
 	UnitBase::~UnitBase();
 }
 
-void PlayerController::SetBulletManager(Bullet::BulletManager *bullet)
-{
-	bulletManager = bullet;
-}
 
 void PlayerController::Update()
 {
@@ -84,7 +80,8 @@ void PlayerController::Shot()
 	reloadValue--;
 	if (Input::GetInstance()->OnRight() == false) return;
 	if(reloadValue > 0)return;
-	bulletManager->Create(10,Bullet::TargetType::Enemy,1,position,position);
+	Bullet::BulletManager::GetInstance()
+		->Create(10, Bullet::TargetType::Enemy, 1, position, position);
 	reloadValue = 60;
 }
 

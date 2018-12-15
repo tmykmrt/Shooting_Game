@@ -126,6 +126,7 @@
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Mathcpp.cpp" />
     <ClCompile Include="MoveLeft.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
@@ -141,6 +142,8 @@
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ShotBase.cpp" />
+    <ClCompile Include="ShotPower.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteData.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -150,6 +153,7 @@
     </ClCompile>
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="GameUIManager.cpp" />
     <ClCompile Include="UnitBase.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +180,8 @@
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ShotBase.h" />
+    <ClInclude Include="ShotPower.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SpriteData.h">
@@ -187,6 +193,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="GameUIManager.h" />
     <ClInclude Include="UnitBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -61,6 +61,18 @@
     <Filter Include="ソース ファイル\Game\2DAnimation">
       <UniqueIdentifier>{862a18f7-e38c-4ed8-a7a3-4271e9a24fc7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\ShotPower">
+      <UniqueIdentifier>{e9261ca3-d892-4c1d-8b8f-fcddc86d3519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\UI">
+      <UniqueIdentifier>{f0eabd97-5300-4447-b71a-e89c58cb81d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Lib">
+      <UniqueIdentifier>{f7c47e0c-51e6-44ba-b38d-a8c040cddc68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\Shot">
+      <UniqueIdentifier>{057267bc-4518-4d18-a806-92a9e9a1a2c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp">
@@ -131,6 +143,18 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotPower.cpp">
+      <Filter>ソース ファイル\Game\Unit\ShotPower</Filter>
+    </ClCompile>
+    <ClCompile Include="GameUIManager.cpp">
+      <Filter>ソース ファイル\Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Mathcpp.cpp">
+      <Filter>ソース ファイル\Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotBase.cpp">
+      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +232,15 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>ソース ファイル\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotPower.h">
+      <Filter>ソース ファイル\Game\Unit\ShotPower</Filter>
+    </ClInclude>
+    <ClInclude Include="GameUIManager.h">
+      <Filter>ソース ファイル\Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotBase.h">
+      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -9,7 +9,7 @@ public:
 		return pInstance;
 	}
 
-	static void Create()
+	static void CreateInstance()
 	{
 		if (pInstance != NULL) return;
 		pInstance = new T();
@@ -31,7 +31,7 @@ private:
 template<class T>
 static T* Singleton<T>::GetInstance();
 template<class T>
-static void Singleton<T>::Create();
+static void Singleton<T>::CreateInstance();
 template<class T>
 static void Singleton<T>::Destroy();
 template<class T>

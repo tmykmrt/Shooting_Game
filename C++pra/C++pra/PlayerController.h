@@ -19,12 +19,10 @@ public:
 	void UpdateVecter();
 
 	void Shot();
-	void SetBulletManager(Bullet::BulletManager *bullet);
 	void HitAction(int atk);
 private:
 	//	
 	D3DXVECTOR2 targetPosition;
-	Bullet::BulletManager *bulletManager;
 	//	
 	int reloadValue;
 	int animnum;
