@@ -12,6 +12,11 @@ struct Animation2DData
 	int pagesNum;
 	//	表示フレーム
 	int frame;
+	//	ループするか
+	bool loop;
+	//	次のアニメの番号
+	//	一連アニメ等
+	int nextAnimaNum;
 };
 
 class Animation2D
@@ -26,7 +31,12 @@ public:
 	void SetAnimaData(Animation2DData *data);
 	//	アニメの更新
 	void UpdateAnima();
-
+	//	種類
+	bool IsEnd();
+	//	次のアニメへ
+	void Next();
+	//	現在の再生回数
+	int NowPlayCount();
 private:
 	//	大本の一枚
 	Sprite *sprite;
@@ -38,6 +48,9 @@ private:
 	int nowAnimaNum;
 	//	現在のアニメのページ
 	int nowAnimaPage;
-	
+	//	アニメ終了したか
+	bool isEnd;
+	//	再生回数
+	float nowPlayCount;
 };
 
