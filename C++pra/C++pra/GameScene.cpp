@@ -2,17 +2,17 @@
 #include "Collision.h"
 #include "PlayerController.h"
 #include "BulletBase.h"
-
+#include "GameUIManager.h"
 
 GameScene::GameScene()
 {
 	EnemyManager::CreateInstance();
 	Bullet::BulletManager::CreateInstance();
-	player = new PlayerController("player.png", 1280, 256);
+	player = new PlayerController("Res/player.png", 1280, 256);
 	bgSprite.pos = { 0,0 };
-	bgSprite.Load("game.png", 1280, 720);
+	bgSprite.Load("Res/game.png", 1280, 720);
+	GameUIManager::CreateInstance();
 }
-
 
 GameScene::~GameScene()
 {
@@ -20,6 +20,7 @@ GameScene::~GameScene()
 	EnemyManager::Destroy();
 	Bullet::BulletManager::Destroy();
 	bgSprite.Release();
+	GameUIManager::Destroy();
 }
 
 void GameScene::Update()
@@ -33,6 +34,7 @@ void GameScene::Update()
 void GameScene::Render()
 {
 	bgSprite.Draw();
+	GameUIManager::GetInstance()->Render();
 	player->Render();
 	EnemyManager::GetInstance()->Render();
 	Bullet::BulletManager::GetInstance()->Render();

@@ -8,7 +8,7 @@ BulletBase::BulletBase()
 
 BulletBase::BulletBase(float speed, Bullet::TargetType targetType, int moveType, D3DXVECTOR2 startPos,D3DXVECTOR2 targtPos)
 {
-	sprite.Load("bullet_01.png", 32, 32);
+	sprite.Load("Res/bullet_01.png", 32, 32);
 	Init(speed, targetType, moveType, startPos,targtPos);
 }
 

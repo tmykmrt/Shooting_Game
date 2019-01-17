@@ -8,7 +8,7 @@ EnemyBase::EnemyBase()
 EnemyBase::EnemyBase(int moveType, D3DXVECTOR2 startPos)
 {
 	speed = 4;
-	sprite.Load("bullet_01.png", 32, 32);
+	sprite.Load("Res/enemy_01.png", 128, 128);
 	Init(moveType, startPos);
 }
 
@@ -24,7 +24,7 @@ void EnemyBase::Init(int moveType, D3DXVECTOR2 startPos)
 	this->moveType = moveType;
 	position = startPos;
 	exists = true;
-	hp = 1;
+	hp.Set(1);
 	if (moveType == 1)
 	{
 		mover = new MoveLeft();

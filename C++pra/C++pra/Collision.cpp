@@ -3,8 +3,8 @@
 
 Collision::Collision()
 {
-}
 
+}
 
 Collision::~Collision()
 {

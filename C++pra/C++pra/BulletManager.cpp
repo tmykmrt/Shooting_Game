@@ -74,7 +74,8 @@ void Bullet::BulletManager::Render()
 }
 
 //	追加
-void Bullet::BulletManager::Create(float speed, Bullet::TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos)
+void Bullet::BulletManager::Create(float speed, Bullet::TargetType targetType, int moveType,
+	D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos)
 {
 	//Bullet *bullet = new Bullet(speed, targetType, moveType, startPos, targtPos);
 	//bullet->SetBulletManager(this);

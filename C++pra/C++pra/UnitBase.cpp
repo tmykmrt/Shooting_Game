@@ -1,5 +1,8 @@
 ﻿#include "UnitBase.h"
 #include "GameParameter.h"
+#include "HitPoint.h"
+
+
 UnitBase::UnitBase()
 {
 	
@@ -37,8 +40,8 @@ void UnitBase::UpdatePosition()
 
 void UnitBase::HitAction(int atk)
 {
-	hp -= atk;
-	if (hp <= 0)
+	hp.SubHp(atk);
+	if (hp.IsEmpty())
 	{
 		exists = false;
 	}

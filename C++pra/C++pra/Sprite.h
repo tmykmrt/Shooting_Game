@@ -14,6 +14,7 @@ public:
 	void Load(TCHAR *name, int imageSizeX, int imageSizeY,int sizeX,int sizeY);
 	//	•`‰æ
 	void Draw();
+	void DrawRatio(float ratioX,float ratioY);
 	//	•`‰æ
 	void DrawCenter();
 	void DrawCenter(int top, int right);

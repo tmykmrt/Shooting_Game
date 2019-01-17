@@ -34,6 +34,12 @@ void Sprite::Draw()
 	m2DObj::Draw(&pTexture, pos,rec);
 }
 
+void Sprite::DrawRatio(float ratioX, float ratioY)
+{
+	RECT rec = { 0, 0, size.x * ratioX, size.y * ratioY };
+	m2DObj::Draw(&pTexture, pos, rec);
+}
+
 void Sprite::DrawCenter()
 {
 	RECT rec = { 0, 0, size.x, size.y };

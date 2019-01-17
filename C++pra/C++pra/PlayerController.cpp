@@ -26,7 +26,7 @@ PlayerController::PlayerController(TCHAR *name, int x, int y)
 	speed = 3;
 	nowSpeed = speed;
 	reloadValue = 0;
-	hp = 10;
+	hp.Set(10);
 	animnum = 0;
 }
 

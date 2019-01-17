@@ -11,7 +11,7 @@ TitleScene::TitleScene()
 {
 	bgSprite.pos.x = 0;
 	bgSprite.pos.y = 0;
-	bgSprite.Load("Title.png",1280,720);
+	bgSprite.Load("Res/Title.png",1280,720);
 }
 
 

@@ -8,6 +8,9 @@
 #pragma once
 #include "Sprite.h"
 #include"stdafx.h"
+#include"HitPoint.h"
+class HitPoint;
+
 class UnitBase
 {
 public:
@@ -44,7 +47,7 @@ protected:
 	//! 現在の速度
 	float nowSpeed;
 	//! 体力
-	int hp;
+	HitPoint hp;
 	//! 存在しているか
 	bool exists;
 };

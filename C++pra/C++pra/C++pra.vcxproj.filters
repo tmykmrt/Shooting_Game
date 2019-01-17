@@ -73,6 +73,21 @@
     <Filter Include="ソース ファイル\Game\Unit\Shot">
       <UniqueIdentifier>{057267bc-4518-4d18-a806-92a9e9a1a2c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Weapon">
+      <UniqueIdentifier>{d70c8d9f-f885-42b6-9102-4e6c1166986a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\UI\PlayerGage">
+      <UniqueIdentifier>{b492ce75-0757-4c7e-b1fa-24ba7c2683e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\HitPoint">
+      <UniqueIdentifier>{26e67d17-9b6b-433a-b30f-080795a1f980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\UI\PlayerGage\PlayerPowerBar">
+      <UniqueIdentifier>{d7821a35-4de6-40c4-8a1b-c8b92c6f0591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\UI\PlayerGage\PlayerHitPointBar">
+      <UniqueIdentifier>{b793de38-b24b-4460-a972-38b9cf20a55c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp">
@@ -150,11 +165,29 @@
     <ClCompile Include="GameUIManager.cpp">
       <Filter>ソース ファイル\Game\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Mathcpp.cpp">
-      <Filter>ソース ファイル\Lib</Filter>
-    </ClCompile>
     <ClCompile Include="ShotBase.cpp">
       <Filter>ソース ファイル\Game\Unit\Shot</Filter>
+    </ClCompile>
+    <ClCompile Include="SubWeaponBase.cpp">
+      <Filter>ソース ファイル\Game\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWeaponBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerGage.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="HitPoint.cpp">
+      <Filter>ソース ファイル\Game\Unit\HitPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>ソース ファイル\Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="UIBar.cpp">
+      <Filter>ソース ファイル\Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBar.cpp">
+      <Filter>ソース ファイル\Game\UI\PlayerGage\PlayerHitPointBar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -169,9 +202,6 @@
     </ClInclude>
     <ClInclude Include="GameScene.h">
       <Filter>ソース ファイル\Game\Scene\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitBase.h">
-      <Filter>ソース ファイル\Game\Unit</Filter>
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>ソース ファイル\Game\Collision</Filter>
@@ -241,6 +271,30 @@
     </ClInclude>
     <ClInclude Include="ShotBase.h">
       <Filter>ソース ファイル\Game\Unit\Shot</Filter>
+    </ClInclude>
+    <ClInclude Include="SubWeaponBase.h">
+      <Filter>ソース ファイル\Game\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWeaponBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerGage.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="HitPoint.h">
+      <Filter>ソース ファイル\Game\Unit\HitPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>ソース ファイル\Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitBase.h">
+      <Filter>ソース ファイル\Game\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="UIBar.h">
+      <Filter>ソース ファイル\Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBar.h">
+      <Filter>ソース ファイル\Game\UI\PlayerGage\PlayerHitPointBar</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
