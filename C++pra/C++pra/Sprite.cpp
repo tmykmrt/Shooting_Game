@@ -6,10 +6,12 @@
 
 Sprite::Sprite()
 {
+
 }
 
 Sprite::~Sprite()
 {
+
 }
 
 //	ì«Ç›çûÇ›
@@ -45,6 +47,7 @@ void Sprite::DrawCenter()
 	RECT rec = { 0, 0, size.x, size.y };
 	m2DObj::DrawCenter(&pTexture, pos, rec,size);
 }
+
 
 void Sprite::DrawCenter(int top,int right)
 {

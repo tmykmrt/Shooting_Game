@@ -21,7 +21,9 @@ namespace Bullet
 		const static int bulletNum = 5;
 		friend class Singleton<BulletManager>;
 		//	作成
-		void Create(float speed, TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
+		void Create(float speed, TargetType targetType, 
+			int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
+
 		void Render();
 		void Update();
 		void Remove(BulletBase *bullet);
@@ -35,4 +37,5 @@ namespace Bullet
 
 		//list<Bullet> bulletList;
 	};
+
 }

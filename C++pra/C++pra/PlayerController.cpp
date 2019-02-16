@@ -3,14 +3,13 @@
 #include "Input.h"
 #include"Collision.h"
 #include"Animation2D.h"
-
+#include"GameUIManager.h"
 
 PlayerController::PlayerController(TCHAR *name, int x, int y)
 {
 	anim = new Animation2D(name, x, y, 128, 128);
-
+	limitPoint = new LimitPoint();
 	//	ひとまずテスト用でデータ生成
-	
 	tmpD[0].animaNum = 1;
 	tmpD[0].pagesNum = 10;
 	tmpD[0].frame = 5;
@@ -18,53 +17,56 @@ PlayerController::PlayerController(TCHAR *name, int x, int y)
 	tmpD[1].animaNum = 2;
 	tmpD[1].pagesNum = 10;
 	tmpD[1].frame = 5;
+
 	anim->SetAnimaData(tmpD);
 	anim->SetAima(0);
-
-	//sprite.Load(name, x, y);
-	//sprite.size = { 128,128 };
+	shotManage = new PlayerShotTrigger(position);
 	speed = 3;
 	nowSpeed = speed;
-	reloadValue = 0;
-	hp.Set(10);
+	hp.Set(10,10,0);
+	GameUIManager::GetInstance()->UpdateHpBar(hp.Rate());
 	animnum = 0;
 }
 
 PlayerController::~PlayerController()
 {
 	delete anim;
+	delete limitPoint;
 	UnitBase::~UnitBase();
 }
 
-
+//	更新
 void PlayerController::Update()
 {
 	UpdateVecter();
-	Shot();
+	//	可能なら射撃する
+	PossibleIfShotAct();
+
+	//	一先ずの処理----------------
+	limitPoint->Update();
+	limitPoint->LimitReleasing();
+	//	---------------------------
+
 	if (Collision::Circle(position.x, position.y, targetPosition.x, targetPosition.y, 2))
 	{
 		anim->SetAima(0);
 		nowSpeed = 0;
 	}
-	else nowSpeed = speed;
+	else
+	{
+		nowSpeed = speed;
+	}
+
 	UpdatePosition();
 }
 
+//	描画
 void PlayerController::Render()
 {
 	anim->Render(position);
-	//animnum++;
-	//sprite.pos = position;
-	//int num = animnum / 10;
-	//num = num == 0 ? 1 : num;
-	//sprite.DrawCenter(1, num);
-	//if (animnum > 10 * 10)
-	//{
-	//	animnum = 0;
-	//}
-	//UnitBase::Render();
 }
 
+//	移動方向の更新
 void PlayerController::UpdateVecter()
 {
 	if (Input::GetInstance()->OnLeft() == false)return;
@@ -75,17 +77,19 @@ void PlayerController::UpdateVecter()
 	anim->SetAima(1);
 }
 
-void PlayerController::Shot()
+//	可能なら射撃
+void PlayerController::PossibleIfShotAct()
 {
-	reloadValue--;
-	if (Input::GetInstance()->OnRight() == false) return;
-	if(reloadValue > 0)return;
-	Bullet::BulletManager::GetInstance()
-		->Create(10, Bullet::TargetType::Enemy, 1, position, position);
-	reloadValue = 60;
+	shotManage->AttackUpdate();
 }
 
-void PlayerController::HitAction(int atk)
+void PlayerController::Damage(int atk)
 {
-	UnitBase::HitAction(atk);
+	UnitBase::Damage(atk);
+	GameUIManager::GetInstance()->UpdateHpBar(hp.Rate());
+}
+
+void PlayerController::ChageLimit()
+{
+	limitPoint->Recovery(10);
 }

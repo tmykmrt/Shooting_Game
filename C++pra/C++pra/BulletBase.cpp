@@ -17,7 +17,6 @@ BulletBase::~BulletBase()
 	UnitBase::~UnitBase();
 }
 
-
 Bullet::TargetType BulletBase::GetTargetType()
 {
 	return targetType;
@@ -36,6 +35,12 @@ void BulletBase::Init(float speed, Bullet::TargetType targetType, int moveType, 
 		vec.x = 1;
 		vec.y = 0;
 	}
+	if (moveType == 2)
+	{
+		float atan = atan2f(targtPos.y - startPos.y, targtPos.x - startPos.x);
+		vec.x = cosf(atan);
+		vec.y = sinf(atan);
+	}
 }
 
 void BulletBase::Update()
@@ -52,10 +57,11 @@ void BulletBase::Render()
 	UnitBase::Render();
 }
 
-void BulletBase::HitAction(int atk)
+void BulletBase::Damage(int atk)
 {
-	UnitBase::HitAction(atk);
+	UnitBase::Damage(atk);
 }
+
 
 void BulletBase::Deleat()
 {

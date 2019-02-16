@@ -5,7 +5,6 @@ class m2DObj : public Singleton<m2DObj>
 {
 public:
 	friend class Singleton<m2DObj>;
-	
 	static HRESULT Init();
 	//	ì«Ç›çûÇ›
 	static int LoadTexture(TCHAR *name, LPDIRECT3DTEXTURE9 *pTexture, int x, int y);

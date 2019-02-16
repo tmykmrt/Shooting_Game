@@ -124,11 +124,12 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="EnemyBase.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
+    <ClCompile Include="EnemyShotTrigger.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="LimitPoint.cpp" />
     <ClCompile Include="PlayerBar.cpp" />
-    <ClCompile Include="HitPoint.cpp" />
+    <ClCompile Include="NumRange.cpp" />
     <ClCompile Include="Input.cpp" />
-    <ClCompile Include="MainWeaponBase.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="MoveLeft.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -144,9 +145,11 @@
     <ClCompile Include="MyDX.cpp" />
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="PlayerGage.cpp" />
+    <ClCompile Include="PlayerInformation.cpp" />
+    <ClCompile Include="PlayerShotTrigger.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="ShotBase.cpp" />
+    <ClCompile Include="ShotTriggerBase.cpp" />
     <ClCompile Include="ShotPower.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteData.cpp">
@@ -155,12 +158,16 @@
     <ClCompile Include="SpriteManager.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="SubWeaponBase.cpp" />
+    <ClCompile Include="WeaponBase.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="GameUIManager.cpp" />
     <ClCompile Include="UIBar.cpp" />
     <ClCompile Include="UnitBase.cpp" />
+    <ClCompile Include="UnitManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation2D.h" />
@@ -169,12 +176,17 @@
     <ClInclude Include="Collision.h" />
     <ClInclude Include="EnemyBase.h" />
     <ClInclude Include="EnemyManager.h" />
+    <ClInclude Include="EnemyShotTrigger.h" />
     <ClInclude Include="GameParameter.h" />
     <ClInclude Include="GameScene.h" />
-    <ClInclude Include="HitPoint.h" />
+    <ClInclude Include="LimitPoint.h" />
+    <ClInclude Include="NumRange.h" />
+    <ClInclude Include="Obsever.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="PlayerBar.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="MainWeaponBase.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="MoveLeft.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -189,9 +201,11 @@
     <ClInclude Include="MyDX.h" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="PlayerGage.h" />
+    <ClInclude Include="PlayerInformation.h" />
+    <ClInclude Include="PlayerShotTrigger.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="ShotBase.h" />
+    <ClInclude Include="ShotTriggerBase.h" />
     <ClInclude Include="ShotPower.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sprite.h" />
@@ -202,12 +216,16 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="SubWeaponBase.h" />
+    <ClInclude Include="WeaponBase.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="GameUIManager.h" />
     <ClInclude Include="UIBar.h" />
     <ClInclude Include="UnitBase.h" />
+    <ClInclude Include="UnitManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

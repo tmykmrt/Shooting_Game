@@ -71,7 +71,7 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR szStr, INT iCmdSh
 			if (SUCCEEDED(MyDX::Device()->BeginScene()))
 			{
 				//	XV
-				Input::GetInstance()->UpdateMouse();
+				Input::GetInstance()->Update();
 				SceneManager::GetInstance()->Update();
 				SceneManager::GetInstance()->Render();
 

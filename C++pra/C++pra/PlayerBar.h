@@ -10,9 +10,11 @@ public:
 	void Render();
 	void Update();
 	void Set(float max);
+	void UpdateRatio(float ratio);
 private:
 	UIBar *uiBar;
 	float nowRatio;
 	float targetRatio;
+	bool upper;
 };
 

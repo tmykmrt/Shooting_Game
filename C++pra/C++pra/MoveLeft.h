@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "MovementBase.h"
+
 class MoveLeft : public MovementBase
 {
 public:
@@ -7,4 +8,3 @@ public:
 	~MoveLeft();
 	void Move(D3DXVECTOR2 &vec);
 };
-

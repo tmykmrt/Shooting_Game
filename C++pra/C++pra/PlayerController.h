@@ -2,10 +2,11 @@
 #include "UnitBase.h"
 #include "stdafx.h"
 #include "Input.h"
-#include "BulletManager.h"
 #include "Animation2D.h"
-class Animation2D;
+#include "PlayerShotTrigger.h"
+#include "LimitPoint.h"
 
+class Animation2D;
 class PlayerController : public UnitBase
 {
 public:
@@ -15,18 +16,18 @@ public:
 	void Update();
 	//	描画
 	void Render();
-
 	void UpdateVecter();
-
-	void Shot();
-	void HitAction(int atk);
+	//	可能なら射撃
+	void PossibleIfShotAct();
+	void Damage(int atk);
+	void ChageLimit();
 private:
 	//	
 	D3DXVECTOR2 targetPosition;
-	//	
-	int reloadValue;
 	int animnum;
 	Animation2D *anim;
 	Animation2DData tmpD[2];
+	PlayerShotTrigger *shotManage;
+	LimitPoint *limitPoint;
 };
 

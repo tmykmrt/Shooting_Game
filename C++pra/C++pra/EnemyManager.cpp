@@ -49,7 +49,6 @@ void EnemyManager::Render()
 	}
 }
 
-
 void EnemyManager::Create(int moveType, D3DXVECTOR2 startPos)
 {
 	for (int i = 0; i < enemyMax; i++)
@@ -68,7 +67,8 @@ void EnemyManager::RandCreae()
 	{
 		D3DXVECTOR2 pos;
 		pos.x = SCREEN_WIDTH;
-		pos.y = (float)rand() / SCREEN_HEIGHT;
+		float rat = (float)(rand() % 10);
+		pos.y = (float)(SCREEN_HEIGHT / rat);
 		Create(1, pos);
 	}
 }

@@ -12,16 +12,19 @@ class BulletBase : public UnitBase
 {
 public:
 	BulletBase();
-	BulletBase(float speed, Bullet::TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
+	BulletBase(float speed, Bullet::TargetType targetType, 
+		int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
 	~BulletBase();
 	//	更新
 	void Update();
 	//	描画
 	void Render();
 	//	初期化
-	void Init(float speed, Bullet::TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
-	void HitAction(int atk);
+	void Init(float speed, Bullet::TargetType targetType, 
+		int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
+	void Damage(int atk);
 	void Deleat();
+
 	Bullet::TargetType GetTargetType();
 private:
 	//!	目標タイプ

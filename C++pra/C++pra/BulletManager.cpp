@@ -3,7 +3,7 @@
 #include "BulletBase.h"
 Bullet::BulletManager::BulletManager()
 {
-	//bulletList = new list<Bullet>;
+	//	bulletList = new list<Bullet>;
 	for (int i = 0; i < bulletNum; i++)
 	{
 		bulletList[i] = NULL;
@@ -13,8 +13,8 @@ Bullet::BulletManager::BulletManager()
 
 Bullet::BulletManager::~BulletManager()
 {
-	//bulletList.clear();
-	//delete bulletList;
+	//	bulletList.clear();
+	//	delete bulletList;
 	delete[] bulletList;
 }
 

@@ -8,8 +8,8 @@
 #pragma once
 #include "Sprite.h"
 #include"stdafx.h"
-#include"HitPoint.h"
-class HitPoint;
+#include"NumRange.h"
+class NumRange;
 
 class UnitBase
 {
@@ -20,8 +20,8 @@ public:
 	virtual void Update() = 0;
 	//	描画
 	virtual void Render() = 0;
-	//	
-	virtual void HitAction(int atk);
+	// ダメージ
+	virtual void Damage(int atk);
 
 	D3DXVECTOR2 GetPosition();
 	//	比較
@@ -47,7 +47,7 @@ protected:
 	//! 現在の速度
 	float nowSpeed;
 	//! 体力
-	HitPoint hp;
+	NumRange hp;
 	//! 存在しているか
 	bool exists;
 };

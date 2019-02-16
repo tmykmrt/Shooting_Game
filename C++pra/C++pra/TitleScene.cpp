@@ -14,17 +14,17 @@ TitleScene::TitleScene()
 	bgSprite.Load("Res/Title.png",1280,720);
 }
 
-
 TitleScene::~TitleScene()
 {
 	//	‰ð•ú
 	bgSprite.Release();
-
 }
+
 void TitleScene::Update()
 {
 	
 }
+
 void TitleScene::Render()
 {
 	bgSprite.Draw();

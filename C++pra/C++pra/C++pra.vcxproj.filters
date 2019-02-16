@@ -79,14 +79,26 @@
     <Filter Include="ソース ファイル\Game\UI\PlayerGage">
       <UniqueIdentifier>{b492ce75-0757-4c7e-b1fa-24ba7c2683e4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Unit\HitPoint">
-      <UniqueIdentifier>{26e67d17-9b6b-433a-b30f-080795a1f980}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\UI\PlayerGage\PlayerPowerBar">
       <UniqueIdentifier>{d7821a35-4de6-40c4-8a1b-c8b92c6f0591}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Game\UI\PlayerGage\PlayerHitPointBar">
       <UniqueIdentifier>{b793de38-b24b-4460-a972-38b9cf20a55c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\NumRange">
+      <UniqueIdentifier>{26e67d17-9b6b-433a-b30f-080795a1f980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\Player\PlayerShot">
+      <UniqueIdentifier>{8d675420-f983-4d60-8a99-8a5b63320685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Lib\Obsever">
+      <UniqueIdentifier>{844db2f0-65bf-48bd-8764-bd7cb0173b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\Enemy\EnemyShot">
+      <UniqueIdentifier>{3bf8925c-486a-4b66-aaa8-e44e0da9dea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\Player\LimitPoint">
+      <UniqueIdentifier>{a9ffda69-1b67-464b-8109-c5e640df79fb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -165,20 +177,8 @@
     <ClCompile Include="GameUIManager.cpp">
       <Filter>ソース ファイル\Game\UI</Filter>
     </ClCompile>
-    <ClCompile Include="ShotBase.cpp">
-      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
-    </ClCompile>
-    <ClCompile Include="SubWeaponBase.cpp">
-      <Filter>ソース ファイル\Game\Weapon</Filter>
-    </ClCompile>
-    <ClCompile Include="MainWeaponBase.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerGage.cpp">
       <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="HitPoint.cpp">
-      <Filter>ソース ファイル\Game\Unit\HitPoint</Filter>
     </ClCompile>
     <ClCompile Include="Math.cpp">
       <Filter>ソース ファイル\Lib</Filter>
@@ -188,6 +188,30 @@
     </ClCompile>
     <ClCompile Include="PlayerBar.cpp">
       <Filter>ソース ファイル\Game\UI\PlayerGage\PlayerHitPointBar</Filter>
+    </ClCompile>
+    <ClCompile Include="NumRange.cpp">
+      <Filter>ソース ファイル\Game\Unit\NumRange</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitManager.cpp">
+      <Filter>ソース ファイル\Game\Unit</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotTriggerBase.cpp">
+      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyShotTrigger.cpp">
+      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerShotTrigger.cpp">
+      <Filter>ソース ファイル\Game\Unit\Player\PlayerShot</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerInformation.cpp">
+      <Filter>ソース ファイル\Game\Unit\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="LimitPoint.cpp">
+      <Filter>ソース ファイル\Game\Unit\Player\LimitPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponBase.cpp">
+      <Filter>ソース ファイル\Game\Weapon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -269,20 +293,8 @@
     <ClInclude Include="GameUIManager.h">
       <Filter>ソース ファイル\Game\UI</Filter>
     </ClInclude>
-    <ClInclude Include="ShotBase.h">
-      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
-    </ClInclude>
-    <ClInclude Include="SubWeaponBase.h">
-      <Filter>ソース ファイル\Game\Weapon</Filter>
-    </ClInclude>
-    <ClInclude Include="MainWeaponBase.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerGage.h">
       <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="HitPoint.h">
-      <Filter>ソース ファイル\Game\Unit\HitPoint</Filter>
     </ClInclude>
     <ClInclude Include="Math.h">
       <Filter>ソース ファイル\Lib</Filter>
@@ -295,6 +307,33 @@
     </ClInclude>
     <ClInclude Include="PlayerBar.h">
       <Filter>ソース ファイル\Game\UI\PlayerGage\PlayerHitPointBar</Filter>
+    </ClInclude>
+    <ClInclude Include="NumRange.h">
+      <Filter>ソース ファイル\Game\Unit\NumRange</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitManager.h">
+      <Filter>ソース ファイル\Game\Unit</Filter>
+    </ClInclude>
+    <ClInclude Include="Obsever.h">
+      <Filter>ソース ファイル\Lib\Obsever</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotTriggerBase.h">
+      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyShotTrigger.h">
+      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerShotTrigger.h">
+      <Filter>ソース ファイル\Game\Unit\Player\PlayerShot</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInformation.h">
+      <Filter>ソース ファイル\Game\Unit\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="LimitPoint.h">
+      <Filter>ソース ファイル\Game\Unit\Player\LimitPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponBase.h">
+      <Filter>ソース ファイル\Game\Weapon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

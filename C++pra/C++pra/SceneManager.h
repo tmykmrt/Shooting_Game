@@ -15,6 +15,7 @@ public:
 		Title,
 		Game,
 	};
+
 	friend class Singleton<SceneManager>;
 	//	ƒV[ƒ“‚ÌØ‚è‘Ö‚¦
 	void Change(Scene newScene);

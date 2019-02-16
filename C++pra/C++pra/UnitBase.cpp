@@ -1,7 +1,6 @@
 ﻿#include "UnitBase.h"
 #include "GameParameter.h"
-#include "HitPoint.h"
-
+#include "NumRange.h"
 
 UnitBase::UnitBase()
 {
@@ -38,9 +37,9 @@ void UnitBase::UpdatePosition()
 	position += vec * nowSpeed;
 }
 
-void UnitBase::HitAction(int atk)
+void UnitBase::Damage(int atk)
 {
-	hp.SubHp(atk);
+	hp.Add(-atk);
 	if (hp.IsEmpty())
 	{
 		exists = false;

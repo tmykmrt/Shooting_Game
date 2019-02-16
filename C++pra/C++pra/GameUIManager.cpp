@@ -28,6 +28,13 @@ GameUIManager::~GameUIManager()
 	powFlame->Release();
 }
 
+void GameUIManager::Update()
+{
+	playerHp->Update();
+	playerMp->Update();
+	playerPow->Update();
+}
+
 void GameUIManager::Render()
 {
 	pointFlame->Draw();
@@ -38,7 +45,16 @@ void GameUIManager::Render()
 }
 
 //	
-void UpdateHpBar(float newHp)
+void GameUIManager::UpdateHpBar(float raito)
 {
+	playerHp->UpdateRatio(raito);
+}
 
+void GameUIManager::UpdateMpBar(float raito)
+{
+	playerMp->UpdateRatio(raito);
+}
+void GameUIManager::UpdatePowBar(float raito)
+{
+	playerPow->UpdateRatio(raito);
 }

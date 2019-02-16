@@ -106,6 +106,7 @@ bool Input::ConfirmKeyEntry()
 void Input::Update()
 {
 	UpdateKeys();
+	UpdateMouse();
 }
 
 //	
@@ -117,9 +118,7 @@ void Input::UpdateKeys()
 	{
 		pKeyDevice->GetDeviceState(sizeof(inputKeys), &inputKeys);
 	}
-
 }
-
 
 void Input::UpdateMouse()
 {
@@ -127,7 +126,10 @@ void Input::UpdateMouse()
 	{
 		pMouseDevice->Acquire();
 	}
-
+	upJustLeft = false;
+	upJustRight = false;
+	onJustRight = false;
+	onJustLeft = false;
 	//	マウス座標の更新
 	POINT po;
 	GetCursorPos(&po);
@@ -136,6 +138,18 @@ void Input::UpdateMouse()
 
 	onMouseLeft = inputMouse.rgbButtons[0] & 0x80;
 	onMouseRight = inputMouse.rgbButtons[1] & 0x80;
+
+	//	押した瞬間を検知
+	if (oldRight == false && onMouseRight) onJustRight = true;
+	if (oldLeft == false && onMouseLeft ) onJustLeft = true;
+
+	//	離された瞬間を検知
+	if (oldRight && onMouseRight == false) upJustRight = true;
+	if (oldLeft && onMouseLeft == false) upJustLeft = true;
+
+	//	ひとつ前の入力を保存
+	oldRight = onMouseRight;
+	oldLeft = onMouseLeft;
 }
 
 void Input::Release()
@@ -144,4 +158,9 @@ void Input::Release()
 	pKeyDevice->Release();
 	pMouseDevice->Release();
 	Singleton::Destroy();
+}
+
+bool Input::ChackKey(int code)
+{
+	return inputKeys[code] & 0x80;
 }

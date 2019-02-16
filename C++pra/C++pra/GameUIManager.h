@@ -8,7 +8,12 @@ class GameUIManager : public Singleton<GameUIManager>
 {
 public:
 	friend class Singleton<GameUIManager>;
+	void Update();
 	void Render();
+	void UpdateHpBar(float raito);
+	void UpdateMpBar(float raito);
+	void UpdatePowBar(float raito);
+protected:
 protected:
 	GameUIManager();
 	~GameUIManager();

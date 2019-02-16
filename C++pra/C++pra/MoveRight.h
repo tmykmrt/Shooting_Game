@@ -11,7 +11,6 @@ class MoveRight :
 public:
 	MoveRight();
 	~MoveRight();
-
 	void Move(D3DXVECTOR2 &vec);
 };
 

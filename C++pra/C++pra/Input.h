@@ -15,8 +15,16 @@ public:
 	void UpdateKeys();
 	void UpdateMouse();
 	D3DXVECTOR2 GetMousePoint() { return mousePoint; }
+	//	押している
 	bool OnRight() { return onMouseRight; }
 	bool OnLeft() { return onMouseLeft; }
+	//	押した瞬間
+	bool OnJustRight() { return onJustRight; }
+	bool OnJustLeft() { return onJustLeft; }
+	//	離した瞬間
+	bool UpRight() { return upJustRight; }
+	bool UpLeft() { return upJustLeft; }
+	bool ChackKey(int code);
 	void Release();
 protected:
 	Input();
@@ -30,13 +38,16 @@ private:
 	static LPDIRECTINPUTDEVICE8 pMouseDevice;
 	//	キーボード入力値
 	char inputKeys[256];
-
 	DIMOUSESTATE2 inputMouse;
-
 	//	マウス座標
 	D3DXVECTOR2 mousePoint;
-	
 	bool onMouseRight;
 	bool onMouseLeft;
+	bool onJustRight;
+	bool onJustLeft;
+	bool upJustRight;
+	bool upJustLeft;
+	bool oldRight;
+	bool oldLeft;
 };
 
