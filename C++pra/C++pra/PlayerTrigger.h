@@ -2,23 +2,23 @@
 #include"stdafx.h"
 #include "ShotPower.h"
 #include "Timer.h"
-#include "ShotTriggerBase.h"
+#include "TriggerBase.h"
 
 /**
 * @file PlayerShotTrigger.h
 * @brief プレイヤーの射撃管理トリガー
 * @date 2019 2/1
 */
-class PlayerShotTrigger : public ShotTriggerBase
+class PlayerTrigger : public TriggerBase
 {
 public:
-	PlayerShotTrigger(D3DXVECTOR2 &pos);
-	~PlayerShotTrigger();
+	PlayerTrigger(D3DXVECTOR2 &pos);
+	~PlayerTrigger();
 	//	攻撃更新
-	void AttackUpdate();
+	void TriggerIfPossible();
 private:
-	//	必要な力
-	void Shot();
+	//	引き金を引く
+	void PullTrigger();
 	//	強いときの必要な力
 	float useStrangPow;
 	//	溜めに必要なフレーム

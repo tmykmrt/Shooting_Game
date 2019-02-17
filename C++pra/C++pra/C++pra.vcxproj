@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -124,9 +124,10 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="EnemyBase.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
-    <ClCompile Include="EnemyShotTrigger.cpp" />
+    <ClCompile Include="EnemyTrigger.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="LimitPoint.cpp" />
+    <ClCompile Include="NormalShot.cpp" />
     <ClCompile Include="PlayerBar.cpp" />
     <ClCompile Include="NumRange.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -146,10 +147,10 @@
     <ClCompile Include="PlayerController.cpp" />
     <ClCompile Include="PlayerGage.cpp" />
     <ClCompile Include="PlayerInformation.cpp" />
-    <ClCompile Include="PlayerShotTrigger.cpp" />
+    <ClCompile Include="PlayerTrigger.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="ShotTriggerBase.cpp" />
+    <ClCompile Include="TriggerBase.cpp" />
     <ClCompile Include="ShotPower.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteData.cpp">
@@ -176,10 +177,11 @@
     <ClInclude Include="Collision.h" />
     <ClInclude Include="EnemyBase.h" />
     <ClInclude Include="EnemyManager.h" />
-    <ClInclude Include="EnemyShotTrigger.h" />
+    <ClInclude Include="EnemyTrigger.h" />
     <ClInclude Include="GameParameter.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="LimitPoint.h" />
+    <ClInclude Include="NormalShot.h" />
     <ClInclude Include="NumRange.h" />
     <ClInclude Include="Obsever.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -202,10 +204,10 @@
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="PlayerGage.h" />
     <ClInclude Include="PlayerInformation.h" />
-    <ClInclude Include="PlayerShotTrigger.h" />
+    <ClInclude Include="PlayerTrigger.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="ShotTriggerBase.h" />
+    <ClInclude Include="TriggerBase.h" />
     <ClInclude Include="ShotPower.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sprite.h" />

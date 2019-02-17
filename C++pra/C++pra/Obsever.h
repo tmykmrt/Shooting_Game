@@ -37,7 +37,7 @@ public:
 		std::list<Obsever *>::iterator it;
 		for (it = obsevers.begin(); it != obsevers.end(); it++)
 		{
-			(*it)->SetSubject(NULL);
+			(*it)->Update();
 		}
 	}
 protected:

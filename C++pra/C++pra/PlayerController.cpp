@@ -20,7 +20,7 @@ PlayerController::PlayerController(TCHAR *name, int x, int y)
 
 	anim->SetAnimaData(tmpD);
 	anim->SetAima(0);
-	shotManage = new PlayerShotTrigger(position);
+	trigger = new PlayerTrigger(position);
 	speed = 3;
 	nowSpeed = speed;
 	hp.Set(10,10,0);
@@ -40,7 +40,7 @@ void PlayerController::Update()
 {
 	UpdateVecter();
 	//	可能なら射撃する
-	PossibleIfShotAct();
+	trigger->TriggerIfPossible();
 
 	//	一先ずの処理----------------
 	limitPoint->Update();
@@ -77,11 +77,6 @@ void PlayerController::UpdateVecter()
 	anim->SetAima(1);
 }
 
-//	可能なら射撃
-void PlayerController::PossibleIfShotAct()
-{
-	shotManage->AttackUpdate();
-}
 
 void PlayerController::Damage(int atk)
 {

@@ -5,7 +5,7 @@
 * @date 2018 9/23
 */
 #include "UnitBase.h"
-#include "EnemyShotTrigger.h"
+#include "EnemyTrigger.h"
 #include "MovementBase.h"
 class EnemyBase : public UnitBase
 {
@@ -25,6 +25,5 @@ private:
 	int shotType;
 	//! ˆÚ“®
 	MovementBase* mover;
-	EnemyShotTrigger *shot;
 };
 

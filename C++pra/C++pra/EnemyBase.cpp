@@ -9,7 +9,7 @@ EnemyBase::EnemyBase()
 EnemyBase::EnemyBase(int moveType, D3DXVECTOR2 startPos)
 {
 	speed = 4;
-	shot = new EnemyShotTrigger(position);
+	trigger = new EnemyTrigger(position);
 	sprite.Load("Res/enemy_01.png", 128, 128);
 	Init(moveType, startPos);
 }
@@ -38,7 +38,7 @@ void EnemyBase::Update()
 {
 	mover->Move(vec);
 	UpdatePosition();
-	shot->Shot(UnitManager::GetInstance()->PlayerInfo().GetPosotion());
+	trigger->TriggerIfPossible();
 	if (CheckScreenOut())
 	{
 		exists = false;

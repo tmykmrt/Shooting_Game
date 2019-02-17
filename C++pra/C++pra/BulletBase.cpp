@@ -41,6 +41,11 @@ void BulletBase::Init(float speed, Bullet::TargetType targetType, int moveType, 
 		vec.x = cosf(atan);
 		vec.y = sinf(atan);
 	}
+	if (moveType == 3)
+	{
+		vec.x = 1;
+		vec.y = 1;
+	}
 }
 
 void BulletBase::Update()

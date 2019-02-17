@@ -9,8 +9,9 @@
 #include "Sprite.h"
 #include"stdafx.h"
 #include"NumRange.h"
+#include"TriggerBase.h"
 class NumRange;
-
+class TriggerBase;
 class UnitBase
 {
 public:
@@ -48,6 +49,7 @@ protected:
 	float nowSpeed;
 	//! 体力
 	NumRange hp;
+	TriggerBase *trigger;
 	//! 存在しているか
 	bool exists;
 };

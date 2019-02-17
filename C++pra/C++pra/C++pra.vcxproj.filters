@@ -195,15 +195,6 @@
     <ClCompile Include="UnitManager.cpp">
       <Filter>ソース ファイル\Game\Unit</Filter>
     </ClCompile>
-    <ClCompile Include="ShotTriggerBase.cpp">
-      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyShotTrigger.cpp">
-      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerShotTrigger.cpp">
-      <Filter>ソース ファイル\Game\Unit\Player\PlayerShot</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerInformation.cpp">
       <Filter>ソース ファイル\Game\Unit\Player</Filter>
     </ClCompile>
@@ -212,6 +203,18 @@
     </ClCompile>
     <ClCompile Include="WeaponBase.cpp">
       <Filter>ソース ファイル\Game\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalShot.cpp">
+      <Filter>ソース ファイル\Game\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggerBase.cpp">
+      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerTrigger.cpp">
+      <Filter>ソース ファイル\Game\Unit\Player\PlayerShot</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyTrigger.cpp">
+      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -317,15 +320,6 @@
     <ClInclude Include="Obsever.h">
       <Filter>ソース ファイル\Lib\Obsever</Filter>
     </ClInclude>
-    <ClInclude Include="ShotTriggerBase.h">
-      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyShotTrigger.h">
-      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerShotTrigger.h">
-      <Filter>ソース ファイル\Game\Unit\Player\PlayerShot</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerInformation.h">
       <Filter>ソース ファイル\Game\Unit\Player</Filter>
     </ClInclude>
@@ -334,6 +328,18 @@
     </ClInclude>
     <ClInclude Include="WeaponBase.h">
       <Filter>ソース ファイル\Game\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalShot.h">
+      <Filter>ソース ファイル\Game\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerBase.h">
+      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTrigger.h">
+      <Filter>ソース ファイル\Game\Unit\Player\PlayerShot</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyTrigger.h">
+      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

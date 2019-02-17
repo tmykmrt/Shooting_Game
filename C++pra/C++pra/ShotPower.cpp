@@ -10,9 +10,9 @@ ShotPower::ShotPower(float max, float recoveFrame)
 	Init(max, recoveFrame);
 }
 
-
 ShotPower::~ShotPower()
 {
+	
 }
 
 void ShotPower::Init(float max, float recoveFrame)

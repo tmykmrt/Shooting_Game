@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include "Input.h"
 #include "Animation2D.h"
-#include "PlayerShotTrigger.h"
+#include "PlayerTrigger.h"
 #include "LimitPoint.h"
 
 class Animation2D;
@@ -17,8 +17,6 @@ public:
 	//	描画
 	void Render();
 	void UpdateVecter();
-	//	可能なら射撃
-	void PossibleIfShotAct();
 	void Damage(int atk);
 	void ChageLimit();
 private:
@@ -27,7 +25,6 @@ private:
 	int animnum;
 	Animation2D *anim;
 	Animation2DData tmpD[2];
-	PlayerShotTrigger *shotManage;
 	LimitPoint *limitPoint;
 };
 

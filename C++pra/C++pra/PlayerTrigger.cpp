@@ -1,34 +1,37 @@
-#include "PlayerShotTrigger.h"
+#include "PlayerTrigger.h"
 #include "Input.h"
 #include "ShotPower.h"
 #include "BulletManager.h"
 #include "Timer.h"
 #include "Animation2D.h"
 #include "GameUIManager.h"
+#include "NormalShot.h"
 
-PlayerShotTrigger::PlayerShotTrigger(D3DXVECTOR2 &pos) 
-	: ShotTriggerBase(pos)
+PlayerTrigger::PlayerTrigger(D3DXVECTOR2 &pos)
+	: TriggerBase(pos)
 {
-	speed = 10;
 	shotPow.Init(100, 600);
 	timer.SetCountFrame(60);
-	targetType = Bullet::Enemy;
-	
+	NormalShot *s = new NormalShot(pos, 3,Bullet::Enemy);
+	NormalShot *s2 = new NormalShot(pos, 10, Bullet::Enemy);
+
+	Subject::AddObserver(s);
+	Subject::AddObserver(s2);
 }
 
-PlayerShotTrigger::~PlayerShotTrigger()
+PlayerTrigger::~PlayerTrigger()
 {
 
 }
 
-void PlayerShotTrigger::AttackUpdate()
+void PlayerTrigger::TriggerIfPossible()
 {
 	shotPow.Chage();
-	Shot();
+	PullTrigger();
 	GameUIManager::GetInstance()->UpdatePowBar(shotPow.Rate());
 }
 
-void PlayerShotTrigger::Shot()
+void PlayerTrigger::PullTrigger()
 {
 	reloadFrame--;
 	if (reloadFrame > 0) return;
@@ -49,7 +52,7 @@ void PlayerShotTrigger::Shot()
 	{
 		return;
 	}
-	if (ShotTriggerBase::Shot())
+	if (TriggerBase::PullTrigger())
 	{
 		reloadFrame = 20;
 	}
