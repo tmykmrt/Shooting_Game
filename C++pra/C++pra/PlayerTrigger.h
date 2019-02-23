@@ -12,7 +12,7 @@
 class PlayerTrigger : public TriggerBase
 {
 public:
-	PlayerTrigger(D3DXVECTOR2 &pos);
+	PlayerTrigger(UnitBase *owner);
 	~PlayerTrigger();
 	//	‰Â”\‚È‚çƒgƒŠƒK[‚ğˆø‚­
 	void TriggerIfPossible();

@@ -12,6 +12,27 @@
 #include"TriggerBase.h"
 class NumRange;
 class TriggerBase;
+
+
+
+enum UnitType
+{
+	None,
+	Player,
+	Enemy,
+};
+
+//	攻撃に必要な情報
+struct AttackUseInfo
+{
+	//	方向
+	byte dir;
+	//	座標
+	D3DXVECTOR2 attckPosition;
+	//	オーナーのタイプ
+	UnitType ownerType;
+};
+
 class UnitBase
 {
 public:
@@ -36,6 +57,8 @@ public:
 	bool CheckScreenOut();
 	//! 座標更新
 	void UpdatePosition();
+	//	攻撃に必要な情報を取得
+	AttackUseInfo FetchAttackUseInfo();
 protected:
 	//!座標
 	D3DXVECTOR2 position;
@@ -43,6 +66,8 @@ protected:
 	D3DXVECTOR2 vec;
 	//!画像
 	Sprite sprite;
+	//	方向
+	byte dir;
 	//!速度
 	float speed;
 	//! 現在の速度
@@ -52,5 +77,7 @@ protected:
 	TriggerBase *trigger;
 	//! 存在しているか
 	bool exists;
+	//	自身のタイプ
+	UnitType myType;
 };
 

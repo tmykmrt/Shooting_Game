@@ -6,7 +6,7 @@ namespace Weapon
 		public WeaponBase
 	{
 	public:
-		AimGun(D3DXVECTOR2 &pos, float speed, Bullet::TargetType targetType);
+		AimGun(UnitBase& owner);
 		~AimGun();
 	};
 }

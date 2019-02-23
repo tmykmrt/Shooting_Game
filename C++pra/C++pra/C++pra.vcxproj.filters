@@ -70,9 +70,6 @@
     <Filter Include="ソース ファイル\Lib">
       <UniqueIdentifier>{f7c47e0c-51e6-44ba-b38d-a8c040cddc68}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Unit\Shot">
-      <UniqueIdentifier>{057267bc-4518-4d18-a806-92a9e9a1a2c6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Weapon">
       <UniqueIdentifier>{d70c8d9f-f885-42b6-9102-4e6c1166986a}</UniqueIdentifier>
     </Filter>
@@ -88,14 +85,8 @@
     <Filter Include="ソース ファイル\Game\Unit\NumRange">
       <UniqueIdentifier>{26e67d17-9b6b-433a-b30f-080795a1f980}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Unit\Player\PlayerShot">
-      <UniqueIdentifier>{8d675420-f983-4d60-8a99-8a5b63320685}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Lib\Obsever">
       <UniqueIdentifier>{844db2f0-65bf-48bd-8764-bd7cb0173b17}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game\Unit\Enemy\EnemyShot">
-      <UniqueIdentifier>{3bf8925c-486a-4b66-aaa8-e44e0da9dea8}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Game\Unit\Player\LimitPoint">
       <UniqueIdentifier>{a9ffda69-1b67-464b-8109-c5e640df79fb}</UniqueIdentifier>
@@ -111,6 +102,15 @@
     </Filter>
     <Filter Include="ソース ファイル\Game\Weapon\AimGun">
       <UniqueIdentifier>{3b3f003f-c853-447b-8425-4153d5d66f7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\Player\PlayerTrriger">
+      <UniqueIdentifier>{8d675420-f983-4d60-8a99-8a5b63320685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\Trriger">
+      <UniqueIdentifier>{057267bc-4518-4d18-a806-92a9e9a1a2c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\Enemy\EnemyTrriger">
+      <UniqueIdentifier>{3bf8925c-486a-4b66-aaa8-e44e0da9dea8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -220,13 +220,13 @@
       <Filter>ソース ファイル\Game\Weapon</Filter>
     </ClCompile>
     <ClCompile Include="TriggerBase.cpp">
-      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
+      <Filter>ソース ファイル\Game\Unit\Trriger</Filter>
     </ClCompile>
     <ClCompile Include="PlayerTrigger.cpp">
-      <Filter>ソース ファイル\Game\Unit\Player\PlayerShot</Filter>
+      <Filter>ソース ファイル\Game\Unit\Player\PlayerTrriger</Filter>
     </ClCompile>
     <ClCompile Include="EnemyTrigger.cpp">
-      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
+      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyTrriger</Filter>
     </ClCompile>
     <ClCompile Include="WeaponFactory.cpp">
       <Filter>ソース ファイル\Game\Weapon\Factory</Filter>
@@ -357,13 +357,13 @@
       <Filter>ソース ファイル\Game\Weapon</Filter>
     </ClInclude>
     <ClInclude Include="TriggerBase.h">
-      <Filter>ソース ファイル\Game\Unit\Shot</Filter>
+      <Filter>ソース ファイル\Game\Unit\Trriger</Filter>
     </ClInclude>
     <ClInclude Include="PlayerTrigger.h">
-      <Filter>ソース ファイル\Game\Unit\Player\PlayerShot</Filter>
+      <Filter>ソース ファイル\Game\Unit\Player\PlayerTrriger</Filter>
     </ClInclude>
     <ClInclude Include="EnemyTrigger.h">
-      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
+      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyTrriger</Filter>
     </ClInclude>
     <ClInclude Include="WeaponFactory.h">
       <Filter>ソース ファイル\Game\Weapon\Factory</Filter>

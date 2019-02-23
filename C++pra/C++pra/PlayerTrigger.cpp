@@ -5,20 +5,18 @@
 #include "Timer.h"
 #include "Animation2D.h"
 #include "GameUIManager.h"
-#include "NormalShot.h"
-
-PlayerTrigger::PlayerTrigger(D3DXVECTOR2 &pos)
-	: TriggerBase(pos)
+#include "WeaponFactory.h"
+PlayerTrigger::PlayerTrigger(UnitBase *owner)
 {
 	shotPow.Init(100, 600);
 	timer.SetCountFrame(60);
 
 	//	‚Ð‚Æ‚Ü‚¸‰¼‚Åì¬
-	NormalShot *s = new NormalShot(pos, 3,Bullet::Enemy);
-	NormalShot *s2 = new NormalShot(pos, 10, Bullet::Enemy);
+	WeaponBase *weapon 
+		= WeaponFactory::GetInstance()->Create(WeaponFactory::Gun, owner);
 
-	Subject::AddObserver(s);
-	Subject::AddObserver(s2);
+
+	Subject::AddObserver(weapon);
 }
 
 PlayerTrigger::~PlayerTrigger()

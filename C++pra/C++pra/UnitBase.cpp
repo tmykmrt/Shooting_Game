@@ -50,3 +50,14 @@ D3DXVECTOR2 UnitBase::GetPosition()
 {
 	return position;
 }
+
+
+
+AttackUseInfo UnitBase::FetchAttackUseInfo()
+{
+	AttackUseInfo retinfo;
+	retinfo.dir = dir;
+	retinfo.attckPosition = position;
+	retinfo.ownerType = myType;
+	return retinfo;
+}

@@ -60,7 +60,7 @@ void UnitManager::Colision()
 		if (b == NULL)continue;
 		if (b->Exists() == false)continue;
 		//	エネミーとの判定
-		if (b->GetTargetType() == Bullet::TargetType::Enemy)
+		if (b->GetTargetType() == UnitType::Enemy)
 		{
 			for (int k = 0; k < EnemyManager::enemyMax; k++)
 			{

@@ -9,7 +9,7 @@ EnemyBase::EnemyBase()
 EnemyBase::EnemyBase(int moveType, D3DXVECTOR2 startPos)
 {
 	speed = 4;
-	trigger = new EnemyTrigger(position);
+	trigger = new EnemyTrigger(this);
 	sprite.Load("Res/enemy_01.png", 128, 128);
 	Init(moveType, startPos);
 }
@@ -25,6 +25,7 @@ void EnemyBase::Init(int moveType, D3DXVECTOR2 startPos)
 	this->moveType = moveType;
 	position = startPos;
 	exists = true;
+	dir = -1;
 	hp.Set(1, 1, 0);
 
 	if (moveType == 1)

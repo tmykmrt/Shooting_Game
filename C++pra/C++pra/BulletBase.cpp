@@ -6,7 +6,7 @@ BulletBase::BulletBase()
 	
 }
 
-BulletBase::BulletBase(float speed, Bullet::TargetType targetType, int moveType, D3DXVECTOR2 startPos,D3DXVECTOR2 targtPos)
+BulletBase::BulletBase(float speed, UnitType targetType, int moveType, D3DXVECTOR2 startPos,D3DXVECTOR2 targtPos)
 {
 	sprite.Load("Res/bullet_01.png", 32, 32);
 	Init(speed, targetType, moveType, startPos,targtPos);
@@ -17,12 +17,12 @@ BulletBase::~BulletBase()
 	UnitBase::~UnitBase();
 }
 
-Bullet::TargetType BulletBase::GetTargetType()
+UnitType BulletBase::GetTargetType()
 {
 	return targetType;
 }
 
-void BulletBase::Init(float speed, Bullet::TargetType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos)
+void BulletBase::Init(float speed, UnitType targetType, int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos)
 {
 	position = startPos;
 	this->speed = speed;

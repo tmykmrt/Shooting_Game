@@ -10,7 +10,7 @@ class EnemyTrigger :
 	public TriggerBase
 {
 public:
-	EnemyTrigger(D3DXVECTOR2 &pos);
+	EnemyTrigger(UnitBase* ower);
 	~EnemyTrigger();
 	void TriggerIfPossible();
 private:

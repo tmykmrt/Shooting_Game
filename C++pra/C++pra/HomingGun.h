@@ -8,7 +8,7 @@ namespace Weapon
 		public WeaponBase
 	{
 	public:
-		HomingGun(D3DXVECTOR2 &pos, float speed, Bullet::TargetType targetType);
+		HomingGun(UnitBase &owner);
 		~HomingGun();
 	};
 }

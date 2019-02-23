@@ -1,27 +1,21 @@
 ﻿#pragma once
 #include"stdafx.h"
 #include "UnitBase.h"
-class BulletBase ;
+class BulletBase;
+enum UnitType;
 /**
 * @brief 弾の管理
 * @details 弾の更新、描画、生成を行う
 */
 namespace Bullet
 {
-	enum TargetType
-	{
-		None,
-		Player,
-		Enemy,
-	};
-
 	class BulletManager : public Singleton<BulletManager>
 	{
 	public:
 		const static int bulletNum = 5;
 		friend class Singleton<BulletManager>;
 		//	作成
-		void Create(float speed, TargetType targetType, 
+		void Create(float speed,UnitType targetType,
 			int moveType, D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos);
 
 		void Render();

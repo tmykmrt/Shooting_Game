@@ -2,7 +2,7 @@
 #include"BulletManager.h"
 using namespace Bullet;
 
-TriggerBase::TriggerBase(D3DXVECTOR2 &pos) : shotPos(pos)
+TriggerBase::TriggerBase()
 {
 	
 }

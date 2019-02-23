@@ -20,12 +20,13 @@ PlayerController::PlayerController(TCHAR *name, int x, int y)
 
 	anim->SetAnimaData(tmpD);
 	anim->SetAima(0);
-	trigger = new PlayerTrigger(position);
+	trigger = new PlayerTrigger(this);
 	speed = 3;
 	nowSpeed = speed;
 	hp.Set(10,10,0);
 	GameUIManager::GetInstance()->UpdateHpBar(hp.Rate());
 	animnum = 0;
+	dir = 1;
 }
 
 PlayerController::~PlayerController()

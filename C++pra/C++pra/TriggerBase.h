@@ -13,7 +13,7 @@ class ShotPower;
 class TriggerBase : public Subject
 {
 public:
-	TriggerBase(D3DXVECTOR2 &pos);
+	TriggerBase();
 	//	‰Â”\‚È‚çˆø‚­
 	virtual void TriggerIfPossible() = 0;
 protected:
@@ -26,6 +26,5 @@ protected:
 	//	ˆø‚«‹à‚ðˆø‚­
 	bool PullTrigger();
 private:
-	const D3DXVECTOR2 &shotPos;
 };
 

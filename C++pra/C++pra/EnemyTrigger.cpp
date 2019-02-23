@@ -1,6 +1,6 @@
 #include "EnemyTrigger.h"
 
-EnemyTrigger::EnemyTrigger(D3DXVECTOR2 &pos) : TriggerBase(pos)
+EnemyTrigger::EnemyTrigger(UnitBase* ower)
 {
 	shotPow.Init(60, 300);
 	usePow = 50;

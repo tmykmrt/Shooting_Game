@@ -80,7 +80,7 @@ void Bullet::BulletManager::Render()
 }
 
 //	追加
-void Bullet::BulletManager::Create(float speed, Bullet::TargetType targetType, int moveType,
+void Bullet::BulletManager::Create(float speed, UnitType targetType, int moveType,
 	D3DXVECTOR2 startPos, D3DXVECTOR2 targtPos)
 {
 	BulletBase *bullet = new BulletBase(speed, targetType, moveType, startPos, targtPos);

@@ -12,19 +12,18 @@ WeaponFactory::~WeaponFactory()
 }
 
 //	ïêäÌÇê∂ê¨Ç∑ÇÈ
-WeaponBase *WeaponFactory::Create(WeaponType createType)
+WeaponBase *WeaponFactory::Create(WeaponType createType,UnitBase *owner)
 {
-	WeaponBase *createWeapon;
 	switch (createType)
 	{
 	case WeaponFactory::Gun:
-		//createWeapon = new Weapon::Gun(NULL,0, Bullet::TargetType::Enemy);
+		return new Weapon::Gun(*owner);
 		break;
 	case WeaponFactory::HomingGun:
-		//createWeapon = new Weapon::HomingGun(NULL, 0, Bullet::TargetType::Enemy);
+		return new Weapon::HomingGun(*owner);
 		break;
 	case WeaponFactory::AimGun:
-		//createWeapon = new Weapon::AimGun(NULL, 0, Bullet::TargetType::Enemy);
+		return new Weapon::AimGun(*owner);
 		break;
 	case WeaponFactory::Beam:
 		break;
@@ -33,5 +32,5 @@ WeaponBase *WeaponFactory::Create(WeaponType createType)
 		break;
 	}
 
-	return createWeapon;
+	return NULL;
 }
