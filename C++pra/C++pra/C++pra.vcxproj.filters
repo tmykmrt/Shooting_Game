@@ -100,6 +100,18 @@
     <Filter Include="ソース ファイル\Game\Unit\Player\LimitPoint">
       <UniqueIdentifier>{a9ffda69-1b67-464b-8109-c5e640df79fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Game\Weapon\Factory">
+      <UniqueIdentifier>{27293024-1a8a-4169-8fd2-bc5cad22d4c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Weapon\Gun">
+      <UniqueIdentifier>{35495de2-61a9-48b2-a93a-55ee47b92118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Weapon\HomingGun">
+      <UniqueIdentifier>{2b3c9af1-67ed-4aca-804c-04c024c73de2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Weapon\AimGun">
+      <UniqueIdentifier>{3b3f003f-c853-447b-8425-4153d5d66f7c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SceneBase.cpp">
@@ -215,6 +227,18 @@
     </ClCompile>
     <ClCompile Include="EnemyTrigger.cpp">
       <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponFactory.cpp">
+      <Filter>ソース ファイル\Game\Weapon\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>ソース ファイル\Game\Weapon\Gun</Filter>
+    </ClCompile>
+    <ClCompile Include="HomingGun.cpp">
+      <Filter>ソース ファイル\Game\Weapon\HomingGun</Filter>
+    </ClCompile>
+    <ClCompile Include="AimGun.cpp">
+      <Filter>ソース ファイル\Game\Weapon\AimGun</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -340,6 +364,18 @@
     </ClInclude>
     <ClInclude Include="EnemyTrigger.h">
       <Filter>ソース ファイル\Game\Unit\Enemy\EnemyShot</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponFactory.h">
+      <Filter>ソース ファイル\Game\Weapon\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>ソース ファイル\Game\Weapon\Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="HomingGun.h">
+      <Filter>ソース ファイル\Game\Weapon\HomingGun</Filter>
+    </ClInclude>
+    <ClInclude Include="AimGun.h">
+      <Filter>ソース ファイル\Game\Weapon\AimGun</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

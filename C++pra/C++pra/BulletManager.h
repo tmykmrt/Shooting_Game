@@ -34,8 +34,7 @@ namespace Bullet
 	private:
 		//	弾のは配列
 		BulletBase *bulletList[bulletNum];
-
-		//list<Bullet> bulletList;
+		list<BulletBase> *bulletLists;
 	};
 
 }

@@ -24,7 +24,10 @@ void UnitManager::Update()
 	player->Update();
 	EnemyManager::GetInstance()->Update();
 	Bullet::BulletManager::GetInstance()->Update();
-	Colision();
+
+	//	“–‚½‚è”»’è‚ÍŒ»İ–³‚µ
+	//	•Ê‚Ì‘‚«•û‚ª‚È‚¢‚©–Íõ’†
+	//Colision();
 }
 
 void UnitManager::Render()

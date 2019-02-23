@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AimGun.cpp" />
     <ClCompile Include="Animation2D.cpp" />
     <ClCompile Include="BulletBase.cpp" />
     <ClCompile Include="BulletManager.cpp" />
@@ -126,6 +127,8 @@
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="EnemyTrigger.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="HomingGun.cpp" />
     <ClCompile Include="LimitPoint.cpp" />
     <ClCompile Include="NormalShot.cpp" />
     <ClCompile Include="PlayerBar.cpp" />
@@ -169,8 +172,10 @@
     <ClCompile Include="UIBar.cpp" />
     <ClCompile Include="UnitBase.cpp" />
     <ClCompile Include="UnitManager.cpp" />
+    <ClCompile Include="WeaponFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AimGun.h" />
     <ClInclude Include="Animation2D.h" />
     <ClInclude Include="BulletBase.h" />
     <ClInclude Include="BulletManager.h" />
@@ -180,6 +185,8 @@
     <ClInclude Include="EnemyTrigger.h" />
     <ClInclude Include="GameParameter.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Gun.h" />
+    <ClInclude Include="HomingGun.h" />
     <ClInclude Include="LimitPoint.h" />
     <ClInclude Include="NormalShot.h" />
     <ClInclude Include="NumRange.h" />
@@ -228,6 +235,7 @@
     <ClInclude Include="UIBar.h" />
     <ClInclude Include="UnitBase.h" />
     <ClInclude Include="UnitManager.h" />
+    <ClInclude Include="WeaponFactory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,6 +12,8 @@ PlayerTrigger::PlayerTrigger(D3DXVECTOR2 &pos)
 {
 	shotPow.Init(100, 600);
 	timer.SetCountFrame(60);
+
+	//	Ç–Ç∆Ç‹Ç∏âºÇ≈çÏê¨
 	NormalShot *s = new NormalShot(pos, 3,Bullet::Enemy);
 	NormalShot *s2 = new NormalShot(pos, 10, Bullet::Enemy);
 

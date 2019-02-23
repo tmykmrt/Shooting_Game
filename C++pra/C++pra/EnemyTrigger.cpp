@@ -10,15 +10,15 @@ EnemyTrigger::~EnemyTrigger()
 {
 
 }
-
+//	ˆø‚«‹à‚ðˆø‚­
 void EnemyTrigger::PullTrigger()
 {
 	if (shotPow.NowPow()->
 		IsFull() == false) return;
-
 	TriggerBase::PullTrigger();
 }
 
+//	‰Â”\‚È‚çˆø‚«‹à‚ðˆø‚­
 void EnemyTrigger::TriggerIfPossible()
 {
 	shotPow.Chage();

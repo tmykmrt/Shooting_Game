@@ -1,5 +1,6 @@
 #pragma once
 #include "WeaponBase.h"
+//	’ÊíËŒ‚UŒ‚
 class NormalShot :
 	public WeaponBase
 {

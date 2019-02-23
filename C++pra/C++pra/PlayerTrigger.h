@@ -14,7 +14,7 @@ class PlayerTrigger : public TriggerBase
 public:
 	PlayerTrigger(D3DXVECTOR2 &pos);
 	~PlayerTrigger();
-	//	攻撃更新
+	//	可能ならトリガーを引く
 	void TriggerIfPossible();
 private:
 	//	引き金を引く

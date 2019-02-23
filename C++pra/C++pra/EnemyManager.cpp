@@ -63,6 +63,7 @@ void EnemyManager::Create(int moveType, D3DXVECTOR2 startPos)
 
 void EnemyManager::RandCreae()
 {
+
 	if ((rand() % 100) == 0)
 	{
 		D3DXVECTOR2 pos;
