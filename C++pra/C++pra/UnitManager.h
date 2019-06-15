@@ -5,20 +5,24 @@
 #include "PlayerController.h"
 #include "PlayerInformation.h"
 
-class UnitManager : public Singleton<UnitManager>
+namespace Unit
 {
-public:
-	friend class Singleton<UnitManager>;
-	//!	“–‚½‚è”»’è
-	void Colision();
-	void Update();
-	void Render();
-	PlayerInformation &PlayerInfo();
-protected:
-	UnitManager();
-	~UnitManager();
-private:
-	PlayerController *player;
-	PlayerInformation *playerinfo;
-};
+	class UnitManager : public Singleton<UnitManager>
+	{
+	public:
+		friend class Singleton<UnitManager>;
+		//!	“–‚½‚è”»’è
+		void Colision();
+		void Update();
+		void Render();
+		void CreateShape();
+		Player::PlayerInformation &PlayerInfo();
+	protected:
+		UnitManager();
+		~UnitManager();
+	private:
+		Player::PlayerController *player;
+		Player::PlayerInformation *playerinfo;
+	};
+}
 

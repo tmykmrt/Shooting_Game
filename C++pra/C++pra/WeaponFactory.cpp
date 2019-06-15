@@ -12,18 +12,18 @@ WeaponFactory::~WeaponFactory()
 }
 
 //	ïêäÌÇê∂ê¨Ç∑ÇÈ
-WeaponBase *WeaponFactory::Create(WeaponType createType,UnitBase *owner)
+WeaponBase *WeaponFactory::Create(WeaponType createType, Unit::UnitBase *owner,D3DXVECTOR2 dirVec)
 {
 	switch (createType)
 	{
 	case WeaponFactory::Gun:
-		return new Weapon::Gun(*owner);
+		return new Weapon::Gun(*owner, dirVec);
 		break;
 	case WeaponFactory::HomingGun:
-		return new Weapon::HomingGun(*owner);
+		return new Weapon::HomingGun(*owner, dirVec);
 		break;
 	case WeaponFactory::AimGun:
-		return new Weapon::AimGun(*owner);
+		return new Weapon::AimGun(*owner, dirVec);
 		break;
 	case WeaponFactory::Beam:
 		break;

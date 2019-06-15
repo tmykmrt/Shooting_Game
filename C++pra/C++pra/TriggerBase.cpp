@@ -1,6 +1,6 @@
 #include "TriggerBase.h"
 #include"BulletManager.h"
-using namespace Bullet;
+using namespace Unit::Bullet;
 
 TriggerBase::TriggerBase()
 {
@@ -23,3 +23,7 @@ bool TriggerBase::PullTrigger()
 	return true;
 }
 
+void TriggerBase::ChangeUsePow(float newPow)
+{
+	usePow = newPow;
+}

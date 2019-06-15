@@ -31,9 +31,6 @@
     <Filter Include="ソース ファイル\Game\Scene\Game">
       <UniqueIdentifier>{6f8ce9ab-3bd9-42ee-ae26-1fe3b25a9d7f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Singleton">
-      <UniqueIdentifier>{86f3c84b-35cb-4648-91c8-175913572486}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\SpriteData">
       <UniqueIdentifier>{ad65824d-d74b-4e22-bbd7-dab201d7d2f6}</UniqueIdentifier>
     </Filter>
@@ -103,14 +100,23 @@
     <Filter Include="ソース ファイル\Game\Weapon\AimGun">
       <UniqueIdentifier>{3b3f003f-c853-447b-8425-4153d5d66f7c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Unit\Player\PlayerTrriger">
-      <UniqueIdentifier>{8d675420-f983-4d60-8a99-8a5b63320685}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Game\Unit\Trriger">
       <UniqueIdentifier>{057267bc-4518-4d18-a806-92a9e9a1a2c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Game\Unit\Enemy\EnemyTrriger">
+    <Filter Include="ソース ファイル\Game\Unit\Trriger\PlayerTrriger">
+      <UniqueIdentifier>{8d675420-f983-4d60-8a99-8a5b63320685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Unit\Trriger\EnemyTrriger">
       <UniqueIdentifier>{3bf8925c-486a-4b66-aaa8-e44e0da9dea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Lib\Singleton">
+      <UniqueIdentifier>{86f3c84b-35cb-4648-91c8-175913572486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Collision\Shape">
+      <UniqueIdentifier>{5e061556-7abe-4d14-a8db-1cec4bb24668}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Game\Collision\CollisionReceiver">
+      <UniqueIdentifier>{3dcf4a06-69fd-496b-9758-10bf995cab48}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -189,9 +195,6 @@
     <ClCompile Include="GameUIManager.cpp">
       <Filter>ソース ファイル\Game\UI</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerGage.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Math.cpp">
       <Filter>ソース ファイル\Lib</Filter>
     </ClCompile>
@@ -216,17 +219,14 @@
     <ClCompile Include="WeaponBase.cpp">
       <Filter>ソース ファイル\Game\Weapon</Filter>
     </ClCompile>
-    <ClCompile Include="NormalShot.cpp">
-      <Filter>ソース ファイル\Game\Weapon</Filter>
-    </ClCompile>
     <ClCompile Include="TriggerBase.cpp">
       <Filter>ソース ファイル\Game\Unit\Trriger</Filter>
     </ClCompile>
     <ClCompile Include="PlayerTrigger.cpp">
-      <Filter>ソース ファイル\Game\Unit\Player\PlayerTrriger</Filter>
+      <Filter>ソース ファイル\Game\Unit\Trriger\PlayerTrriger</Filter>
     </ClCompile>
     <ClCompile Include="EnemyTrigger.cpp">
-      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyTrriger</Filter>
+      <Filter>ソース ファイル\Game\Unit\Trriger\EnemyTrriger</Filter>
     </ClCompile>
     <ClCompile Include="WeaponFactory.cpp">
       <Filter>ソース ファイル\Game\Weapon\Factory</Filter>
@@ -239,6 +239,24 @@
     </ClCompile>
     <ClCompile Include="AimGun.cpp">
       <Filter>ソース ファイル\Game\Weapon\AimGun</Filter>
+    </ClCompile>
+    <ClCompile Include="HomingMove.cpp">
+      <Filter>ソース ファイル\Game\Unit\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>ソース ファイル\Game\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionFactory.cpp">
+      <Filter>ソース ファイル\Game\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleShape.cpp">
+      <Filter>ソース ファイル\Game\Collision\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="RectShape.cpp">
+      <Filter>ソース ファイル\Game\Collision\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>ソース ファイル\Game\Collision\Shape</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -256,9 +274,6 @@
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>ソース ファイル\Game\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="BulletManager.h">
-      <Filter>ソース ファイル\Game\Unit\Bullet</Filter>
     </ClInclude>
     <ClInclude Include="EnemyManager.h">
       <Filter>ソース ファイル\Game\Unit\Enemy</Filter>
@@ -285,7 +300,7 @@
       <Filter>ソース ファイル\Game\Unit\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
-      <Filter>ソース ファイル\Game\Singleton</Filter>
+      <Filter>ソース ファイル\Lib\Singleton</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
       <Filter>ソース ファイル\Game\Unit\Player</Filter>
@@ -311,17 +326,11 @@
     <ClInclude Include="Sprite.h">
       <Filter>ソース ファイル\DX</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>ソース ファイル\Game</Filter>
-    </ClInclude>
     <ClInclude Include="ShotPower.h">
       <Filter>ソース ファイル\Game\Unit\ShotPower</Filter>
     </ClInclude>
     <ClInclude Include="GameUIManager.h">
       <Filter>ソース ファイル\Game\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerGage.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Math.h">
       <Filter>ソース ファイル\Lib</Filter>
@@ -353,17 +362,14 @@
     <ClInclude Include="WeaponBase.h">
       <Filter>ソース ファイル\Game\Weapon</Filter>
     </ClInclude>
-    <ClInclude Include="NormalShot.h">
-      <Filter>ソース ファイル\Game\Weapon</Filter>
-    </ClInclude>
     <ClInclude Include="TriggerBase.h">
       <Filter>ソース ファイル\Game\Unit\Trriger</Filter>
     </ClInclude>
     <ClInclude Include="PlayerTrigger.h">
-      <Filter>ソース ファイル\Game\Unit\Player\PlayerTrriger</Filter>
+      <Filter>ソース ファイル\Game\Unit\Trriger\PlayerTrriger</Filter>
     </ClInclude>
     <ClInclude Include="EnemyTrigger.h">
-      <Filter>ソース ファイル\Game\Unit\Enemy\EnemyTrriger</Filter>
+      <Filter>ソース ファイル\Game\Unit\Trriger\EnemyTrriger</Filter>
     </ClInclude>
     <ClInclude Include="WeaponFactory.h">
       <Filter>ソース ファイル\Game\Weapon\Factory</Filter>
@@ -376,6 +382,33 @@
     </ClInclude>
     <ClInclude Include="AimGun.h">
       <Filter>ソース ファイル\Game\Weapon\AimGun</Filter>
+    </ClInclude>
+    <ClInclude Include="HomingMove.h">
+      <Filter>ソース ファイル\Game\Unit\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>ソース ファイル\Game\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionFactory.h">
+      <Filter>ソース ファイル\Game\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleShape.h">
+      <Filter>ソース ファイル\Game\Collision\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="RectShape.h">
+      <Filter>ソース ファイル\Game\Collision\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>ソース ファイル\Game\Collision\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletManager.h">
+      <Filter>ソース ファイル\Game\Unit\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionReceiver.h">
+      <Filter>ソース ファイル\Game\Collision\CollisionReceiver</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

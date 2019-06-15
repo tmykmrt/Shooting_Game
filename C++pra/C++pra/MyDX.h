@@ -23,4 +23,3 @@ private:
 	static LPDIRECT3D9 pD3d;
 	static LPDIRECT3DDEVICE9 pDevice;
 };
-

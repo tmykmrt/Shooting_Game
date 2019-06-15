@@ -10,10 +10,11 @@ class EnemyTrigger :
 	public TriggerBase
 {
 public:
-	EnemyTrigger(UnitBase* ower);
+	EnemyTrigger(Unit::UnitBase* ower);
 	~EnemyTrigger();
 	void TriggerIfPossible();
 private:
 	void PullTrigger();
+	EnemyTrigger *trigger;
 };
 

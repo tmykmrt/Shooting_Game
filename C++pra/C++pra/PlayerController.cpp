@@ -4,6 +4,11 @@
 #include"Collision.h"
 #include"Animation2D.h"
 #include"GameUIManager.h"
+#include"CollisionFactory.h"
+#include"Shape.h"
+
+using namespace Collision;
+using namespace Unit::Player;
 
 PlayerController::PlayerController(TCHAR *name, int x, int y)
 {
@@ -36,6 +41,16 @@ PlayerController::~PlayerController()
 	UnitBase::~UnitBase();
 }
 
+void PlayerController::CreateShape()
+{
+	CollisionFactory *factry = new CollisionFactory();
+	CollisionFactory::ShapeData data;
+	data.radiu = 64.0f;
+	data.type = ShapeType::Circle;
+	shape = factry->Create(data);
+	delete factry;
+}
+
 //	更新
 void PlayerController::Update()
 {
@@ -48,7 +63,7 @@ void PlayerController::Update()
 	limitPoint->LimitReleasing();
 	//	---------------------------
 
-	if (Collision::Circle(position.x, position.y, targetPosition.x, targetPosition.y, 2))
+	if (CollisionJudgment::Circle(position.x, position.y, targetPosition.x, targetPosition.y, 2))
 	{
 		anim->SetAima(0);
 		nowSpeed = 0;

@@ -1,7 +1,7 @@
 #include "Gun.h"
 using namespace Weapon;
-
-Gun::Gun(UnitBase& owner) : WeaponBase(owner)
+using namespace Unit;
+Gun::Gun(UnitBase &owner, D3DXVECTOR2 dirVec) : WeaponBase(owner, dirVec)
 {
 
 }
@@ -15,5 +15,5 @@ void Gun::Update()
 {
 	AttackUseInfo info = owner.FetchAttackUseInfo();
 	Bullet::BulletManager::GetInstance()
-		->Create(10, UnitType::None, 1, info.attckPosition, info.attckPosition);
+		->Create(10, Unit::UnitType::None, 1, info.attckPosition, info.attckPosition);
 }

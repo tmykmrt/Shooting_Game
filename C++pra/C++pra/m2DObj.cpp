@@ -50,13 +50,37 @@ void m2DObj::Draw(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT rect)
 	pSprite->End();
 }
 //	描画
+//頂点フォーマット定義
+struct TEX_VERTEX
+{
+	float x, y, z;
+	float u, v;
+};
 void m2DObj::DrawCenter(LPDIRECT3DTEXTURE9 *pTexture, D3DXVECTOR2 pos, RECT drowRect, D3DXVECTOR2 size)
 {
+
 	D3DXVECTOR3 v3Center(size.x / 2, size.y / 2, 0);
 	D3DXVECTOR3 v3Position(pos);
+	//D3DXMATRIX      matWorld, matWork;
+	//D3DXMatrixIdentity(&matWorld);
+	//D3DXMatrixIdentity(&matWork);
+	//float rad = 3.141592f / 180.0f; // ラジアンの初期化
+	//D3DXMatrixRotationZ(&matWorld, 90*rad);
+	//
+	//D3DXMatrixTranslation(&matWork, pos.x, pos.y, 0.0f);
+	//v3Position.x = matWork._41;
+	//v3Position.y = matWork._42;
+	////matWorld = matWorld * matWork;
+	//pSprite->SetTransform(&matWorld);
 	pSprite->Begin(D3DXSPRITE_ALPHABLEND);
 	pSprite->Draw(*pTexture, &drowRect, &v3Center, &v3Position, D3DCOLOR_ARGB(255, 255, 255, 255));
+
 	pSprite->End();
+	//	元に戻す
+	//D3DXMatrixRotationZ(&matWorld, 0);
+	//D3DXMatrixTranslation(&matWork, 0, 0, 0.0f);
+	//matWorld = matWorld * matWork;
+	//pSprite->SetTransform(&matWorld);
 }
 
 ////	描画

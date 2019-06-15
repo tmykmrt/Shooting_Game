@@ -4,6 +4,7 @@
 #include "Timer.h"
 #include "TriggerBase.h"
 
+
 /**
 * @file PlayerShotTrigger.h
 * @brief プレイヤーの射撃管理トリガー
@@ -12,7 +13,7 @@
 class PlayerTrigger : public TriggerBase
 {
 public:
-	PlayerTrigger(UnitBase *owner);
+	PlayerTrigger(Unit::UnitBase *owner);
 	~PlayerTrigger();
 	//	可能ならトリガーを引く
 	void TriggerIfPossible();
@@ -27,5 +28,10 @@ private:
 	int reloadFrame;
 	//	時間計測
 	Timer timer;
+	//	通常攻撃に使う力
+	const float normalUsePow = 10;
+	//	チャージ攻撃使う力
+	const float chageUsePow = 80;
+	PlayerTrigger *trigger;
 };
 

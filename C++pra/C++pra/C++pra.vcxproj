@@ -122,15 +122,20 @@
     <ClCompile Include="Animation2D.cpp" />
     <ClCompile Include="BulletBase.cpp" />
     <ClCompile Include="BulletManager.cpp" />
+    <ClCompile Include="CircleShape.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionFactory.cpp" />
+    <ClCompile Include="CollisionManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="EnemyBase.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="EnemyTrigger.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Gun.cpp" />
     <ClCompile Include="HomingGun.cpp" />
+    <ClCompile Include="HomingMove.cpp" />
     <ClCompile Include="LimitPoint.cpp" />
-    <ClCompile Include="NormalShot.cpp" />
     <ClCompile Include="PlayerBar.cpp" />
     <ClCompile Include="NumRange.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -148,11 +153,15 @@
     </ClCompile>
     <ClCompile Include="MyDX.cpp" />
     <ClCompile Include="PlayerController.cpp" />
-    <ClCompile Include="PlayerGage.cpp" />
     <ClCompile Include="PlayerInformation.cpp" />
     <ClCompile Include="PlayerTrigger.cpp" />
+    <ClCompile Include="RectShape.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Shape.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="TriggerBase.cpp" />
     <ClCompile Include="ShotPower.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -179,7 +188,13 @@
     <ClInclude Include="Animation2D.h" />
     <ClInclude Include="BulletBase.h" />
     <ClInclude Include="BulletManager.h" />
+    <ClInclude Include="CircleShape.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionFactory.h" />
+    <ClInclude Include="CollisionManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="CollisionReceiver.h" />
     <ClInclude Include="EnemyBase.h" />
     <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="EnemyTrigger.h" />
@@ -187,8 +202,8 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="HomingGun.h" />
+    <ClInclude Include="HomingMove.h" />
     <ClInclude Include="LimitPoint.h" />
-    <ClInclude Include="NormalShot.h" />
     <ClInclude Include="NumRange.h" />
     <ClInclude Include="Obsever.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -209,11 +224,15 @@
     </ClInclude>
     <ClInclude Include="MyDX.h" />
     <ClInclude Include="PlayerController.h" />
-    <ClInclude Include="PlayerGage.h" />
     <ClInclude Include="PlayerInformation.h" />
     <ClInclude Include="PlayerTrigger.h" />
+    <ClInclude Include="RectShape.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Shape.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="TriggerBase.h" />
     <ClInclude Include="ShotPower.h" />
     <ClInclude Include="Singleton.h" />

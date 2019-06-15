@@ -1,16 +1,22 @@
 #include "PlayerInformation.h"
 
-PlayerInformation::PlayerInformation(PlayerController &player)
+namespace Unit
 {
-	this->player = &player;
-}
+	namespace Player
+	{
+		PlayerInformation::PlayerInformation(PlayerController &player)
+		{
+			this->player = &player;
+		}
 
-PlayerInformation::~PlayerInformation()
-{
+		PlayerInformation::~PlayerInformation()
+		{
 
-}
+		}
 
-D3DXVECTOR2 PlayerInformation::GetPosotion()
-{
-	return player->GetPosition();
+		D3DXVECTOR2 PlayerInformation::GetPosotion()
+		{
+			return player->GetPosition();
+		}
+	}
 }

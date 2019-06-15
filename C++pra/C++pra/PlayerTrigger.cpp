@@ -6,6 +6,7 @@
 #include "Animation2D.h"
 #include "GameUIManager.h"
 #include "WeaponFactory.h"
+using namespace Unit;
 PlayerTrigger::PlayerTrigger(UnitBase *owner)
 {
 	shotPow.Init(100, 600);
@@ -13,10 +14,12 @@ PlayerTrigger::PlayerTrigger(UnitBase *owner)
 
 	//	‚Ð‚Æ‚Ü‚¸‰¼‚Åì¬
 	WeaponBase *weapon 
-		= WeaponFactory::GetInstance()->Create(WeaponFactory::Gun, owner);
-
+		= WeaponFactory::GetInstance()->Create(WeaponFactory::Gun, owner,D3DXVECTOR2(1,0));
+	WeaponBase *weapon2
+		= WeaponFactory::GetInstance()->Create(WeaponFactory::AimGun, owner, D3DXVECTOR2(1, 1));
 
 	Subject::AddObserver(weapon);
+	Subject::AddObserver(weapon2);
 }
 
 PlayerTrigger::~PlayerTrigger()
@@ -24,6 +27,7 @@ PlayerTrigger::~PlayerTrigger()
 
 }
 
+//	‰Â”\‚È‚çˆø‚«‹à‚ðˆø‚­
 void PlayerTrigger::TriggerIfPossible()
 {
 	shotPow.Chage();
@@ -31,13 +35,14 @@ void PlayerTrigger::TriggerIfPossible()
 	GameUIManager::GetInstance()->UpdatePowBar(shotPow.Rate());
 }
 
+//	ˆø‚«‹à‚ðˆø‚­
 void PlayerTrigger::PullTrigger()
 {
 	reloadFrame--;
 	if (reloadFrame > 0) return;
 	if (Input::GetInstance()->OnJustRight())
 	{
-		usePow = 10;
+		TriggerBase::ChangeUsePow(10);
 		timer.SetCountFrame(60);
 	}
 
@@ -45,7 +50,7 @@ void PlayerTrigger::PullTrigger()
 	{
 		if (timer.CheckFrameOut())
 		{
-			usePow = 80;
+			TriggerBase::ChangeUsePow(80);
 		}
 	}
 	if (Input::GetInstance()->UpRight() == false)

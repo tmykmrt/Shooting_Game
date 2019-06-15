@@ -1,8 +1,8 @@
 #include "HomingGun.h"
 
 using namespace Weapon;
-
-HomingGun::HomingGun(UnitBase &owner) : WeaponBase(owner)
+using namespace Unit;
+HomingGun::HomingGun(UnitBase &owner, D3DXVECTOR2 dirVec) : WeaponBase(owner, dirVec)
 {
 }
 

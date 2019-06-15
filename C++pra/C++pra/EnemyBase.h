@@ -7,23 +7,32 @@
 #include "UnitBase.h"
 #include "EnemyTrigger.h"
 #include "MovementBase.h"
-class EnemyBase : public UnitBase
+
+namespace Unit
 {
-public:
-	EnemyBase();
-	EnemyBase(int moveType, D3DXVECTOR2 startPos);
-	~EnemyBase();
-	//	初期化
-	void Init(int moveType, D3DXVECTOR2 startPos);
-	void Update();
-	void Render();
-	void Damage(int atk);
-private:
-	//! 動くタイプ
-	int moveType;
-	//! 打つ種類
-	int shotType;
-	//! 移動
-	MovementBase* mover;
-};
+	namespace Enemy
+	{
+		class EnemyBase : public UnitBase
+		{
+		public:
+			EnemyBase();
+			EnemyBase(int moveType, D3DXVECTOR2 startPos);
+			~EnemyBase();
+			//	初期化
+			void Update();
+			void Render();
+			void Damage(int atk);
+			void CreateShape();
+		private:
+			void Init(int moveType, D3DXVECTOR2 startPos);
+			//! 動くタイプ
+			int moveType;
+			//! 打つ種類
+			int shotType;
+			//! 移動
+			MovementBase* mover;
+			EnemyTrigger *trigger;
+		};
+	}
+}
 

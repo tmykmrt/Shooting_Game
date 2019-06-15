@@ -23,6 +23,5 @@ bool SpriteManager::Load(TCHAR *fileName)
 		//spriteDatas.insert(std::make_pair(loadSpriteName.cou, data));
 	}
 
-	
 	return NULL;
 }

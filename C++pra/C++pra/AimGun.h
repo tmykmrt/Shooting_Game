@@ -6,8 +6,9 @@ namespace Weapon
 		public WeaponBase
 	{
 	public:
-		AimGun(UnitBase& owner);
+		AimGun(Unit::UnitBase &owner, D3DXVECTOR2 dirVec);
 		~AimGun();
+		void Update();
 	};
 }
 

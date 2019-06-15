@@ -1,15 +1,17 @@
 #include "EnemyTrigger.h"
+using namespace Unit;
 
 EnemyTrigger::EnemyTrigger(UnitBase* ower)
 {
 	shotPow.Init(60, 300);
-	usePow = 50;
+	TriggerBase::ChangeUsePow(50);
 }
 
 EnemyTrigger::~EnemyTrigger()
 {
 
 }
+
 //	ˆø‚«‹à‚ðˆø‚­
 void EnemyTrigger::PullTrigger()
 {

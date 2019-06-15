@@ -17,5 +17,4 @@ SpriteData::~SpriteData()
 {
 	sprite->Release();
 	delete sprite;
-
 }

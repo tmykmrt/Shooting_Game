@@ -16,15 +16,17 @@ public:
 	TriggerBase();
 	//	可能なら引く
 	virtual void TriggerIfPossible() = 0;
+	//	使用する力を変える
+	void ChangeUsePow(float newPow);
 protected:
 	//	射撃に必要なパワーを管理
 	ShotPower shotPow;
-	float usePow;
 	//	必要な力
 	//bool Shot(D3DXVECTOR2& targetPos);
 	~TriggerBase();
 	//	引き金を引く
 	bool PullTrigger();
 private:
+	float usePow;
 };
 

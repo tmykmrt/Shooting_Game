@@ -5,9 +5,8 @@ class SpriteData;
 * @brief ‰æ‘œŠÇ—
 * @details ‰æ‘œŠÇ—
 */
-class SpriteManager :public Singleton<SpriteManager>
+class SpriteManager : public Singleton<SpriteManager>
 {
-
 public:
 	friend class Singleton<SpriteManager>;
 	bool Load(TCHAR *fileName);

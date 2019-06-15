@@ -1,8 +1,9 @@
 #include "WeaponBase.h"
-
-WeaponBase::WeaponBase(UnitBase &owner) : owner(owner)
+using namespace Unit;
+WeaponBase::WeaponBase(UnitBase &owner, D3DXVECTOR2 dirVec)
+	: owner(owner)
 {
-
+	this->dirVec = dirVec;
 }
 
 WeaponBase::~WeaponBase()
@@ -11,4 +12,9 @@ WeaponBase::~WeaponBase()
 
 void WeaponBase::Update()
 {
+}
+//	新しいオーナーの登録
+void WeaponBase::RegisterOwner(UnitBase &newOwner)
+{
+	owner = newOwner;
 }

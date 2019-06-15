@@ -2,83 +2,52 @@
 #include "Collision.h"
 #include "PlayerController.h"
 #include "BulletBase.h"
-
-UnitManager::UnitManager()
+using namespace Unit::Bullet;
+using namespace Unit::Enemy;
+using namespace Unit::Player;
+namespace Unit
 {
-	EnemyManager::CreateInstance();
-	Bullet::BulletManager::CreateInstance();
-	player = new PlayerController("Res/player.png", 1280, 256);
-	playerinfo = new PlayerInformation(*player);
-}
-
-UnitManager::~UnitManager()
-{
-	delete player;
-	delete playerinfo;
-	EnemyManager::Destroy();
-	Bullet::BulletManager::Destroy();
-}
-
-void UnitManager::Update()
-{
-	player->Update();
-	EnemyManager::GetInstance()->Update();
-	Bullet::BulletManager::GetInstance()->Update();
-
-	//	“–‚½‚è”»’è‚ÍŒ»Ý–³‚µ
-	//	•Ê‚Ì‘‚«•û‚ª‚È‚¢‚©–Íõ’†
-	//Colision();
-}
-
-void UnitManager::Render()
-{
-	player->Render();
-	EnemyManager::GetInstance()->Render();
-	Bullet::BulletManager::GetInstance()->Render();
-}
-
-void UnitManager::Colision()
-{
-	//	“G‚Æ‚Ì”»’è
-	for (int i = 0; i < EnemyManager::enemyMax; i++)
+	UnitManager::UnitManager()
 	{
-		EnemyBase *e = EnemyManager::GetInstance()->GetEnemy(i);
-		if (e == NULL)continue;
-		if (e->Exists() == false)continue;
-
-		if (Collision::Circle(player->GetPosition(), e->GetPosition(), 32))
-		{
-			player->Damage(1);
-			e->Damage(1);
-		}
+		Unit::Enemy::EnemyManager::CreateInstance();
+		Unit::Bullet::BulletManager::CreateInstance();
+		player = new Unit::Player::PlayerController("Res/player.png", 1280, 256);
+		playerinfo = new Unit::Player::PlayerInformation(*player);
 	}
 
-	//	’e‚Æ‚Ì”»’è
-	for (int i = 0; i < Bullet::BulletManager::bulletNum; i++)
+	UnitManager::~UnitManager()
 	{
-		BulletBase *b = Bullet::BulletManager::GetInstance()->Getbullet(i);
-		if (b == NULL)continue;
-		if (b->Exists() == false)continue;
-		//	ƒGƒlƒ~[‚Æ‚Ì”»’è
-		if (b->GetTargetType() == UnitType::Enemy)
-		{
-			for (int k = 0; k < EnemyManager::enemyMax; k++)
-			{
-				EnemyBase *e = EnemyManager::GetInstance()->GetEnemy(k);
-				if (e == NULL)continue;
-				if (e->Exists() == false)continue;
-				if (Collision::Circle(b->GetPosition(), e->GetPosition(), 32))
-				{
-					e->Damage(1);
-					b->Deleat();
-					player->ChageLimit();
-				}
-			}
-		}
+		delete player;
+		delete playerinfo;
+		Unit::Enemy::EnemyManager::Destroy();
+		Unit::Bullet::BulletManager::Destroy();
 	}
-}
 
-PlayerInformation &UnitManager::PlayerInfo()
-{
-	return *playerinfo;
+	void UnitManager::Update()
+	{
+		player->Update();
+		EnemyManager::GetInstance()->Update();
+		Bullet::BulletManager::GetInstance()->Update();
+
+		//	“–‚½‚è”»’è‚ÍŒ»Ý–³‚µ
+		//	•Ê‚Ì‘‚«•û‚ª‚È‚¢‚©–Íõ’†
+		//Colision();
+	}
+
+	void UnitManager::Render()
+	{
+		player->Render();
+		Unit::Enemy::EnemyManager::GetInstance()->Render();
+		Unit::Bullet::BulletManager::GetInstance()->Render();
+	}
+
+	void UnitManager::Colision()
+	{
+
+	}
+
+	PlayerInformation &UnitManager::PlayerInfo()
+	{
+		return *playerinfo;
+	}
 }

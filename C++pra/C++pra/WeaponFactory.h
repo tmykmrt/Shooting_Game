@@ -20,7 +20,7 @@ public:
 
 	friend class Singleton<WeaponFactory>;
 	//	•Ší‚Ì¶¬
-	WeaponBase* Create(WeaponType createType,UnitBase *owner);
+	WeaponBase* Create(WeaponType createType, Unit::UnitBase *owner, D3DXVECTOR2 dirVec);
 protected:
 	WeaponFactory();
 	~WeaponFactory();
